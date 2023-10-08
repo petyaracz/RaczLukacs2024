@@ -1,0 +1,17 @@
+## make three models
+
+# bigram
+
+ngram-word-generator ngram_source.txt --n=2 --minLength=2 --filter=noSymbols --unique --excludeOriginal > n2_min2_unique_exclor_model.json
+
+# trigram
+
+ngram-word-generator ngram_source.txt --n=3 --minLength=4 --filter=noSymbols --unique --excludeOriginal > n3_min4_unique_exclor_model.json
+
+# fourgram
+
+ngram-word-generator ngram_source.txt --n=4 --minLength=6 --filter=noSymbols --unique --excludeOriginal > n4_min6_unique_exclor_model.json
+
+# make some nonce words and filter them
+
+node ngram_generator.js | grep -vf ../src/hu_list_short.txt | sort | uniq -u > nonce_filtered.txt

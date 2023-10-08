@@ -1,0 +1,188 @@
+0.038000000000000034	EXP	Created Window = Window( name=Window, fullscr=true, color=#000000, units=norm, waitBlanking=true, autoLog=true, size=[1415,1055] )
+1.8	DATA	Keydown: p
+1.8800000000000001	DATA	Keydown: e
+1.9989999999999999	DATA	Keydown: t
+2.0460000000000003	DATA	Keydown: i
+2.2249999999999996	DATA	Keydown: k
+2.766	DATA	Keydown: e
+10.946	EXP	Created instruction_text1 = TextStim( name=instruction_text1, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Ön most szavakat fog látni.
+
+Ezek között lesznek o~, font=Arial, color=#ffffff, contrast=1, height=0.05, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+10.946	EXP	Created instruction_text2 = TextStim( name=instruction_text2, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Először két egyszerű példát mutatunk Önnek.
+
+Az el~, font=Arial, color=#FFFFFF, contrast=1, height=0.05, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+10.947000000000001	EXP	Created show_text = TextStim( name=show_text, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=asztal, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+10.949	EXP	Created text = TextStim( name=text, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=bzsmfsztal, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+10.949	EXP	Created instruction_text3 = TextStim( name=instruction_text3, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Pazar. Most kezdődik az igazi kísérlet. Néhány per~, font=Arial, color=#FFFFFF, contrast=1, height=0.1, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+10.95	EXP	Created szo_kiir = TextStim( name=szo_kiir, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=default text, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+10.95	EXP	Created koszi_szoveg = TextStim( name=koszi_szoveg, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Vége a kísérletnek. Köszönjük a részvételt!, font=arial, color=#ffffff, contrast=1, height=0.1, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+10.992	EXP	instruction_text1: units = "norm"
+10.992	EXP	instruction_text1: ori = 0
+10.992	EXP	instruction_text1: opacity = 1
+10.992	EXP	instruction_text1: pos = [0,0]
+10.992	EXP	instruction_text1: size = undefined
+10.992	EXP	instruction_text1: text = "Ön most szavakat fog látni.\n\nEzek között lesznek olyanok, amelyeket ismer, de előfordulhatnak olyanok is, amelyeket nem ismer, sőt, vannak köztük kitalált szavak is. \n\nKérjük, ha ismeri a képernyőn látható szót, nyomja meg a JOBB kurzorbillentyűt.\nKérjük, ha NEM ismeri a képernyőn látható szót, vagy azt gondolja, nincs ilyen szó a magyarban, nyomja meg a BAL kurzorbillentyűt.\n\nAz 'Ismerem a szót' döntés itt most ezt jelenti: találkoztam már vele, és van valami elképzelésem a jelentéséről is.  \n\nNyomjon meg bármilyen billentyűt a folytatáshoz."
+10.992	EXP	instruction_text1: font = "Arial"
+10.992	EXP	instruction_text1: color = {"_rgb":[1,1,1]}
+10.992	EXP	instruction_text1: contrast = 1
+10.992	EXP	instruction_text1: height = 0.05
+10.992	EXP	instruction_text1: bold = false
+10.992	EXP	instruction_text1: italic = false
+10.992	EXP	instruction_text1: alignHoriz = "left"
+10.992	EXP	instruction_text1: alignVert = "center"
+10.992	EXP	instruction_text1: wrapWidth = 1
+10.992	EXP	instruction_text1: flipHoriz = false
+10.992	EXP	instruction_text1: flipVert = false
+10.992	EXP	instruction_text2: units = "norm"
+10.992	EXP	instruction_text2: ori = 0
+10.992	EXP	instruction_text2: opacity = 1
+10.992	EXP	instruction_text2: pos = [0,0]
+10.992	EXP	instruction_text2: size = undefined
+10.992	EXP	instruction_text2: text = "Először két egyszerű példát mutatunk Önnek.\n\nAz első szó létezik a magyarban, és valószínűleg Ön is ismeri. Itt nyomja majd meg a jobb kurzorbillentyűt.\nA második szó nem létezik a magyar nyelvben. Itt nyomja majd meg a bal kurzorbillentyűt.\n\nFontos, hogy a jobb gombot a jobb kezével, a bal gombot a bal kezével nyomja, ha tudja, és ne egy kezét használja a kísérletben.\n\nNyomjon meg bármilyen gombot a folytatáshoz."
+10.992	EXP	instruction_text2: font = "Arial"
+10.992	EXP	instruction_text2: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+10.992	EXP	instruction_text2: contrast = 1
+10.992	EXP	instruction_text2: height = 0.05
+10.992	EXP	instruction_text2: bold = false
+10.992	EXP	instruction_text2: italic = false
+10.992	EXP	instruction_text2: alignHoriz = "left"
+10.992	EXP	instruction_text2: alignVert = "center"
+10.992	EXP	instruction_text2: wrapWidth = 1
+10.992	EXP	instruction_text2: flipHoriz = false
+10.992	EXP	instruction_text2: flipVert = false
+10.992	EXP	show_text: units = "norm"
+10.992	EXP	show_text: ori = 0
+10.992	EXP	show_text: opacity = 1
+10.992	EXP	show_text: pos = [0,0]
+10.992	EXP	show_text: size = undefined
+10.992	EXP	show_text: text = "asztal"
+10.992	EXP	show_text: font = "Arial"
+10.992	EXP	show_text: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+10.992	EXP	show_text: contrast = 1
+10.992	EXP	show_text: height = 0.2
+10.992	EXP	show_text: bold = false
+10.992	EXP	show_text: italic = false
+10.992	EXP	show_text: alignHoriz = "left"
+10.992	EXP	show_text: alignVert = "center"
+10.992	EXP	show_text: wrapWidth = 1
+10.992	EXP	show_text: flipHoriz = false
+10.992	EXP	show_text: flipVert = false
+10.992	EXP	text: units = "norm"
+10.992	EXP	text: ori = 0
+10.992	EXP	text: opacity = 1
+10.992	EXP	text: pos = [0,0]
+10.992	EXP	text: size = undefined
+10.992	EXP	text: text = "bzsmfsztal"
+10.992	EXP	text: font = "Arial"
+10.992	EXP	text: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+10.992	EXP	text: contrast = 1
+10.992	EXP	text: height = 0.2
+10.992	EXP	text: bold = false
+10.992	EXP	text: italic = false
+10.992	EXP	text: alignHoriz = "left"
+10.992	EXP	text: alignVert = "center"
+10.992	EXP	text: wrapWidth = 1
+10.992	EXP	text: flipHoriz = false
+10.992	EXP	text: flipVert = false
+10.992	EXP	instruction_text3: units = "norm"
+10.992	EXP	instruction_text3: ori = 0
+10.992	EXP	instruction_text3: opacity = 1
+10.992	EXP	instruction_text3: pos = [0,0]
+10.992	EXP	instruction_text3: size = undefined
+10.992	EXP	instruction_text3: text = "Pazar. Most kezdődik az igazi kísérlet. Néhány percig fog tartani. Nem kell nagyon sietnie, de igyekezzen gyorsan válaszolni.\n\nNe feledje, ha tudja, a jobb gombot a jobbkezével, a bal gombot a balkezével nyomja le.\n\nNyomjon meg bármilyen gombot a folytatáshoz."
+10.992	EXP	instruction_text3: font = "Arial"
+10.992	EXP	instruction_text3: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+10.992	EXP	instruction_text3: contrast = 1
+10.992	EXP	instruction_text3: height = 0.1
+10.992	EXP	instruction_text3: bold = false
+10.992	EXP	instruction_text3: italic = false
+10.992	EXP	instruction_text3: alignHoriz = "left"
+10.992	EXP	instruction_text3: alignVert = "center"
+10.992	EXP	instruction_text3: wrapWidth = 1
+10.992	EXP	instruction_text3: flipHoriz = false
+10.992	EXP	instruction_text3: flipVert = false
+10.992	EXP	szo_kiir: units = "norm"
+10.992	EXP	szo_kiir: ori = 0
+10.992	EXP	szo_kiir: opacity = 1
+10.992	EXP	szo_kiir: pos = [0,0]
+10.992	EXP	szo_kiir: size = undefined
+10.992	EXP	szo_kiir: text = "default text"
+10.992	EXP	szo_kiir: font = "Arial"
+10.992	EXP	szo_kiir: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+10.992	EXP	szo_kiir: contrast = 1
+10.992	EXP	szo_kiir: height = 0.2
+10.992	EXP	szo_kiir: bold = false
+10.992	EXP	szo_kiir: italic = false
+10.992	EXP	szo_kiir: alignHoriz = "left"
+10.992	EXP	szo_kiir: alignVert = "center"
+10.992	EXP	szo_kiir: wrapWidth = 1
+10.992	EXP	szo_kiir: flipHoriz = false
+10.992	EXP	szo_kiir: flipVert = false
+10.992	EXP	koszi_szoveg: units = "norm"
+10.992	EXP	koszi_szoveg: ori = 0
+10.992	EXP	koszi_szoveg: opacity = 1
+10.992	EXP	koszi_szoveg: pos = [0,0]
+10.992	EXP	koszi_szoveg: size = undefined
+10.992	EXP	koszi_szoveg: text = "Vége a kísérletnek. Köszönjük a részvételt!"
+10.992	EXP	koszi_szoveg: font = "arial"
+10.992	EXP	koszi_szoveg: color = {"_rgb":[1,1,1]}
+10.992	EXP	koszi_szoveg: contrast = 1
+10.992	EXP	koszi_szoveg: height = 0.1
+10.992	EXP	koszi_szoveg: bold = false
+10.992	EXP	koszi_szoveg: italic = false
+10.992	EXP	koszi_szoveg: alignHoriz = "left"
+10.992	EXP	koszi_szoveg: alignVert = "center"
+10.992	EXP	koszi_szoveg: wrapWidth = 1
+10.992	EXP	koszi_szoveg: flipHoriz = false
+10.992	EXP	koszi_szoveg: flipVert = false
+10.992	EXP	instruction_text1: autoDraw = true
+13.718	DATA	Keydown: ArrowUp
+13.753	EXP	instruction_text1: autoDraw = false
+13.753	EXP	instruction_text2: autoDraw = true
+14.542	DATA	Keydown: ArrowUp
+14.558	EXP	instruction_text2: autoDraw = false
+15.059	EXP	show_text: autoDraw = true
+16.206	DATA	Keydown: ArrowRight
+16.226	EXP	show_text: autoDraw = false
+16.743	EXP	text: autoDraw = true
+17.076999999999998	DATA	Keydown: ArrowLeft
+17.119999999999997	EXP	text: autoDraw = false
+17.119999999999997	EXP	instruction_text3: autoDraw = true
+17.639999999999997	DATA	Keydown: ArrowUp
+17.679	EXP	instruction_text3: autoDraw = false
+17.679	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+17.679	EXP	szo_kiir: text = "komoly"
+18.194	EXP	szo_kiir: autoDraw = true
+18.904999999999998	DATA	Keydown: ArrowRight
+18.927999999999997	EXP	szo_kiir: autoDraw = false
+18.927999999999997	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+18.927999999999997	EXP	szo_kiir: text = "likálható"
+19.444999999999997	EXP	szo_kiir: autoDraw = true
+20.471999999999998	DATA	Keydown: ArrowRight
+20.496	EXP	szo_kiir: autoDraw = false
+20.496	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+20.496	EXP	szo_kiir: text = "kép"
+21.012999999999998	EXP	szo_kiir: autoDraw = true
+21.923	DATA	Keydown: ArrowLeft
+21.945999999999998	EXP	szo_kiir: autoDraw = false
+21.945999999999998	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+21.945999999999998	EXP	szo_kiir: text = "posdótelő"
+22.447	EXP	szo_kiir: autoDraw = true
+23.325999999999997	DATA	Keydown: ArrowRight
+23.357999999999997	EXP	szo_kiir: autoDraw = false
+23.357999999999997	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+23.357999999999997	EXP	szo_kiir: text = "aktív"
+23.866	EXP	szo_kiir: autoDraw = true
+27.496	DATA	Keydown: ArrowLeft
+27.517	EXP	szo_kiir: autoDraw = false
+27.517	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+27.517	EXP	szo_kiir: text = "cím"
+28.019	EXP	szo_kiir: autoDraw = true
+28.766	DATA	Keydown: ArrowLeft
+28.785	EXP	szo_kiir: autoDraw = false
+28.785	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+28.785	EXP	szo_kiir: text = "speciális"
+29.301	EXP	szo_kiir: autoDraw = true
+29.95	DATA	Keydown: ArrowLeft
+29.97	EXP	szo_kiir: autoDraw = false
+29.97	EXP	koszi_szoveg: autoDraw = true

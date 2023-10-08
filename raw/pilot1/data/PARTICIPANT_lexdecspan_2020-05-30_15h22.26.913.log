@@ -1,0 +1,774 @@
+0.08516499999950611	EXP	Created Window = Window( name=Window, fullscr=true, color=#000000, units=norm, waitBlanking=true, autoLog=true, size=[1920,969] )
+3.3945850000000064	DATA	Keydown: 4
+6.0829750000002605	DATA	Keydown: Backspace
+8.003034999999727	DATA	Keydown: 3
+8.497949999999946	DATA	Keydown: 3
+9.347014999999374	DATA	Keydown: 4
+10.004299999999603	DATA	Keydown: 3
+15.724029999999402	DATA	Keydown: n
+15.976864999999634	DATA	Keydown: é
+17.878810000000158	DATA	Keydown: ű
+18.199319999999716	DATA	Keydown: ő
+19.307254999999714	DATA	Keydown: ű
+19.57993499999975	DATA	Keydown: ű
+20.636195000000043	DATA	Keydown: Backspace
+20.866234999999506	DATA	Keydown: Backspace
+21.249259999999595	DATA	Keydown: Backspace
+21.69617500000004	DATA	Keydown: Backspace
+22.051939999999377	DATA	Keydown: Backspace
+22.97495499999968	DATA	Keydown: ő
+26.968965000000026	DATA	Keydown: 2
+27.48286999999982	DATA	Keydown: 0
+27.715164999999615	DATA	Keydown: 0
+28.51605500000005	DATA	Keydown: 4
+29.187979999999698	DATA	Keydown: .
+29.712370000000192	DATA	Keydown: 0
+30.500129999999444	DATA	Keydown: 4
+30.761419999999816	DATA	Keydown: .
+31.646244999999908	DATA	Keydown: 1
+31.96494999999959	DATA	Keydown: 7
+32.18307000000004	DATA	Keydown: .
+41.016515000000254	DATA	Keydown: 1
+41.332524999999805	DATA	Keydown: 0
+45.30613499999981	EXP	Created instruction_text1 = TextStim( name=instruction_text1, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Ön most szavakat fog látni.
+
+Ezek között lesznek o~, font=Arial, color=#ffffff, contrast=1, height=0.05, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+45.31009999999969	EXP	Created instruction_text2 = TextStim( name=instruction_text2, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Először két egyszerű példát mutatunk Önnek.
+
+Az el~, font=Arial, color=#FFFFFF, contrast=1, height=0.05, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+45.31150499999967	EXP	Created show_text = TextStim( name=show_text, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=asztal, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+45.31240499999967	EXP	Created text = TextStim( name=text, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=bzsmfsztal, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+45.31314999999995	EXP	Created instruction_text3 = TextStim( name=instruction_text3, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Pazar. Most kezdődik az igazi kísérlet. Néhány per~, font=Arial, color=#FFFFFF, contrast=1, height=0.1, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+45.31384999999955	EXP	Created szo_kiir = TextStim( name=szo_kiir, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=default text, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+45.31457499999942	EXP	Created koszi_szoveg = TextStim( name=koszi_szoveg, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Vége a kísérletnek. Köszönjük a részvételt!, font=arial, color=#ffffff, contrast=1, height=0.1, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+45.42666000000008	EXP	instruction_text1: units = "norm"
+45.42666000000008	EXP	instruction_text1: ori = 0
+45.42666000000008	EXP	instruction_text1: opacity = 1
+45.42666000000008	EXP	instruction_text1: pos = [0,0]
+45.42666000000008	EXP	instruction_text1: size = undefined
+45.42666000000008	EXP	instruction_text1: text = "Ön most szavakat fog látni.\n\nEzek között lesznek olyanok, amelyeket ismer, de előfordulhatnak olyanok is, amelyeket nem ismer, sőt, vannak köztük kitalált szavak is. \n\nKérjük, ha ismeri a képernyőn látható szót, nyomja meg a JOBB kurzorbillentyűt.\nKérjük, ha NEM ismeri a képernyőn látható szót, vagy azt gondolja, nincs ilyen szó a magyarban, nyomja meg a BAL kurzorbillentyűt.\n\nAz 'Ismerem a szót' döntés itt most ezt jelenti: találkoztam már vele, és van valami elképzelésem a jelentéséről is.  \n\nNyomjon meg bármilyen billentyűt a folytatáshoz."
+45.42666000000008	EXP	instruction_text1: font = "Arial"
+45.42666000000008	EXP	instruction_text1: color = {"_rgb":[1,1,1]}
+45.42666000000008	EXP	instruction_text1: contrast = 1
+45.42666000000008	EXP	instruction_text1: height = 0.05
+45.42666000000008	EXP	instruction_text1: bold = false
+45.42666000000008	EXP	instruction_text1: italic = false
+45.42666000000008	EXP	instruction_text1: alignHoriz = "left"
+45.42666000000008	EXP	instruction_text1: alignVert = "center"
+45.42666000000008	EXP	instruction_text1: wrapWidth = 1
+45.42666000000008	EXP	instruction_text1: flipHoriz = false
+45.42666000000008	EXP	instruction_text1: flipVert = false
+45.42666000000008	EXP	instruction_text2: units = "norm"
+45.42666000000008	EXP	instruction_text2: ori = 0
+45.42666000000008	EXP	instruction_text2: opacity = 1
+45.42666000000008	EXP	instruction_text2: pos = [0,0]
+45.42666000000008	EXP	instruction_text2: size = undefined
+45.42666000000008	EXP	instruction_text2: text = "Először két egyszerű példát mutatunk Önnek.\n\nAz első szó létezik a magyarban, és valószínűleg Ön is ismeri. Itt nyomja majd meg a jobb kurzorbillentyűt.\nA második szó nem létezik a magyar nyelvben. Itt nyomja majd meg a bal kurzorbillentyűt.\n\nFontos, hogy a jobb gombot a jobb kezével, a bal gombot a bal kezével nyomja, ha tudja, és ne egy kezét használja a kísérletben.\n\nNyomjon meg bármilyen gombot a folytatáshoz."
+45.42666000000008	EXP	instruction_text2: font = "Arial"
+45.42666000000008	EXP	instruction_text2: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+45.42666000000008	EXP	instruction_text2: contrast = 1
+45.42666000000008	EXP	instruction_text2: height = 0.05
+45.42666000000008	EXP	instruction_text2: bold = false
+45.42666000000008	EXP	instruction_text2: italic = false
+45.42666000000008	EXP	instruction_text2: alignHoriz = "left"
+45.42666000000008	EXP	instruction_text2: alignVert = "center"
+45.42666000000008	EXP	instruction_text2: wrapWidth = 1
+45.42666000000008	EXP	instruction_text2: flipHoriz = false
+45.42666000000008	EXP	instruction_text2: flipVert = false
+45.42666000000008	EXP	show_text: units = "norm"
+45.42666000000008	EXP	show_text: ori = 0
+45.42666000000008	EXP	show_text: opacity = 1
+45.42666000000008	EXP	show_text: pos = [0,0]
+45.42666000000008	EXP	show_text: size = undefined
+45.42666000000008	EXP	show_text: text = "asztal"
+45.42666000000008	EXP	show_text: font = "Arial"
+45.42666000000008	EXP	show_text: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+45.42666000000008	EXP	show_text: contrast = 1
+45.42666000000008	EXP	show_text: height = 0.2
+45.42666000000008	EXP	show_text: bold = false
+45.42666000000008	EXP	show_text: italic = false
+45.42666000000008	EXP	show_text: alignHoriz = "left"
+45.42666000000008	EXP	show_text: alignVert = "center"
+45.42666000000008	EXP	show_text: wrapWidth = 1
+45.42666000000008	EXP	show_text: flipHoriz = false
+45.42666000000008	EXP	show_text: flipVert = false
+45.42666000000008	EXP	text: units = "norm"
+45.42666000000008	EXP	text: ori = 0
+45.42666000000008	EXP	text: opacity = 1
+45.42666000000008	EXP	text: pos = [0,0]
+45.42666000000008	EXP	text: size = undefined
+45.42666000000008	EXP	text: text = "bzsmfsztal"
+45.42666000000008	EXP	text: font = "Arial"
+45.42666000000008	EXP	text: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+45.42666000000008	EXP	text: contrast = 1
+45.42666000000008	EXP	text: height = 0.2
+45.42666000000008	EXP	text: bold = false
+45.42666000000008	EXP	text: italic = false
+45.42666000000008	EXP	text: alignHoriz = "left"
+45.42666000000008	EXP	text: alignVert = "center"
+45.42666000000008	EXP	text: wrapWidth = 1
+45.42666000000008	EXP	text: flipHoriz = false
+45.42666000000008	EXP	text: flipVert = false
+45.42666000000008	EXP	instruction_text3: units = "norm"
+45.42666000000008	EXP	instruction_text3: ori = 0
+45.42666000000008	EXP	instruction_text3: opacity = 1
+45.42666000000008	EXP	instruction_text3: pos = [0,0]
+45.42666000000008	EXP	instruction_text3: size = undefined
+45.42666000000008	EXP	instruction_text3: text = "Pazar. Most kezdődik az igazi kísérlet. Néhány percig fog tartani. Nem kell nagyon sietnie, de igyekezzen gyorsan válaszolni.\n\nNe feledje, ha tudja, a jobb gombot a jobbkezével, a bal gombot a balkezével nyomja le.\n\nNyomjon meg bármilyen gombot a folytatáshoz."
+45.42666000000008	EXP	instruction_text3: font = "Arial"
+45.42666000000008	EXP	instruction_text3: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+45.42666000000008	EXP	instruction_text3: contrast = 1
+45.42666000000008	EXP	instruction_text3: height = 0.1
+45.42666000000008	EXP	instruction_text3: bold = false
+45.42666000000008	EXP	instruction_text3: italic = false
+45.42666000000008	EXP	instruction_text3: alignHoriz = "left"
+45.42666000000008	EXP	instruction_text3: alignVert = "center"
+45.42666000000008	EXP	instruction_text3: wrapWidth = 1
+45.42666000000008	EXP	instruction_text3: flipHoriz = false
+45.42666000000008	EXP	instruction_text3: flipVert = false
+45.42666000000008	EXP	szo_kiir: units = "norm"
+45.42666000000008	EXP	szo_kiir: ori = 0
+45.42666000000008	EXP	szo_kiir: opacity = 1
+45.42666000000008	EXP	szo_kiir: pos = [0,0]
+45.42666000000008	EXP	szo_kiir: size = undefined
+45.42666000000008	EXP	szo_kiir: text = "default text"
+45.42666000000008	EXP	szo_kiir: font = "Arial"
+45.42666000000008	EXP	szo_kiir: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+45.42666000000008	EXP	szo_kiir: contrast = 1
+45.42666000000008	EXP	szo_kiir: height = 0.2
+45.42666000000008	EXP	szo_kiir: bold = false
+45.42666000000008	EXP	szo_kiir: italic = false
+45.42666000000008	EXP	szo_kiir: alignHoriz = "left"
+45.42666000000008	EXP	szo_kiir: alignVert = "center"
+45.42666000000008	EXP	szo_kiir: wrapWidth = 1
+45.42666000000008	EXP	szo_kiir: flipHoriz = false
+45.42666000000008	EXP	szo_kiir: flipVert = false
+45.42666000000008	EXP	koszi_szoveg: units = "norm"
+45.42666000000008	EXP	koszi_szoveg: ori = 0
+45.42666000000008	EXP	koszi_szoveg: opacity = 1
+45.42666000000008	EXP	koszi_szoveg: pos = [0,0]
+45.42666000000008	EXP	koszi_szoveg: size = undefined
+45.42666000000008	EXP	koszi_szoveg: text = "Vége a kísérletnek. Köszönjük a részvételt!"
+45.42666000000008	EXP	koszi_szoveg: font = "arial"
+45.42666000000008	EXP	koszi_szoveg: color = {"_rgb":[1,1,1]}
+45.42666000000008	EXP	koszi_szoveg: contrast = 1
+45.42666000000008	EXP	koszi_szoveg: height = 0.1
+45.42666000000008	EXP	koszi_szoveg: bold = false
+45.42666000000008	EXP	koszi_szoveg: italic = false
+45.42666000000008	EXP	koszi_szoveg: alignHoriz = "left"
+45.42666000000008	EXP	koszi_szoveg: alignVert = "center"
+45.42666000000008	EXP	koszi_szoveg: wrapWidth = 1
+45.42666000000008	EXP	koszi_szoveg: flipHoriz = false
+45.42666000000008	EXP	koszi_szoveg: flipVert = false
+45.42666000000008	EXP	instruction_text1: autoDraw = true
+102.01831500000026	DATA	Keydown:  
+102.0584199999994	EXP	instruction_text1: autoDraw = false
+102.0584199999994	EXP	instruction_text2: autoDraw = true
+144.47947000000022	DATA	Mouse: 2 button down, pos=(128,553)
+144.54656499999965	DATA	Mouse: 2 button down, pos=(128,553)
+145.61604999999963	DATA	Mouse: 0 button down, pos=(220,703)
+145.75348500000018	DATA	Mouse: 0 button down, pos=(245,696)
+151.87993499999993	DATA	Keydown:  
+151.90232500000005	EXP	instruction_text2: autoDraw = false
+152.42108000000007	EXP	show_text: autoDraw = true
+154.01382000000012	DATA	Mouse: 2 button down, pos=(177,1037)
+154.14751499999966	DATA	Mouse: 2 button down, pos=(177,1037)
+166.46459499999946	DATA	Mouse: 2 button down, pos=(408,825)
+166.59751499999948	DATA	Mouse: 2 button down, pos=(408,825)
+167.79788999999982	DATA	Mouse: 0 button down, pos=(312,795)
+167.90360499999952	DATA	Mouse: 0 button down, pos=(312,795)
+172.71706999999967	DATA	Keydown: ArrowRight
+172.7409550000002	EXP	show_text: autoDraw = false
+173.26753000000008	EXP	text: autoDraw = true
+175.27109000000019	DATA	Keydown: ArrowLeft
+175.33730999999992	EXP	text: autoDraw = false
+175.33730999999992	EXP	instruction_text3: autoDraw = true
+191.70074000000022	DATA	Keydown: ArrowRight
+191.7961749999995	EXP	instruction_text3: autoDraw = false
+191.7961749999995	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+191.7961749999995	EXP	szo_kiir: text = "komoly"
+192.32335999999944	EXP	szo_kiir: autoDraw = true
+193.32532999999967	DATA	Keydown: ArrowRight
+193.34707499999968	EXP	szo_kiir: autoDraw = false
+193.34707499999968	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+193.34707499999968	EXP	szo_kiir: text = "nincs"
+193.87330999999998	EXP	szo_kiir: autoDraw = true
+194.83677499999976	DATA	Keydown: ArrowRight
+194.8765599999997	EXP	szo_kiir: autoDraw = false
+194.8765599999997	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+194.8765599999997	EXP	szo_kiir: text = "jákfű"
+195.3992200000002	EXP	szo_kiir: autoDraw = true
+197.9767849999998	DATA	Keydown: ArrowRight
+197.9985399999996	EXP	szo_kiir: autoDraw = false
+197.9985399999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+197.9985399999996	EXP	szo_kiir: text = "tér"
+198.522465	EXP	szo_kiir: autoDraw = true
+199.84292000000008	DATA	Keydown: ArrowRight
+199.8643750000001	EXP	szo_kiir: autoDraw = false
+199.8643750000001	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+199.8643750000001	EXP	szo_kiir: text = "verseny"
+200.37479499999972	EXP	szo_kiir: autoDraw = true
+201.14913499999966	DATA	Keydown: ArrowRight
+201.18138	EXP	szo_kiir: autoDraw = false
+201.18138	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+201.18138	EXP	szo_kiir: text = "függ"
+201.6975849999999	EXP	szo_kiir: autoDraw = true
+202.7247649999999	DATA	Keydown: ArrowRight
+202.7462349999996	EXP	szo_kiir: autoDraw = false
+202.7462349999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+202.7462349999996	EXP	szo_kiir: text = "perilita"
+203.27432499999938	EXP	szo_kiir: autoDraw = true
+205.46620499999972	DATA	Keydown: ArrowLeft
+205.51004000000012	EXP	szo_kiir: autoDraw = false
+205.51004000000012	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+205.51004000000012	EXP	szo_kiir: text = "nyelvű"
+206.033805	EXP	szo_kiir: autoDraw = true
+207.37597000000005	DATA	Keydown: ArrowRight
+207.39812999999958	EXP	szo_kiir: autoDraw = false
+207.39812999999958	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+207.39812999999958	EXP	szo_kiir: text = "fény"
+207.92260999999962	EXP	szo_kiir: autoDraw = true
+208.9804349999995	DATA	Keydown: ArrowRight
+209.01004999999986	EXP	szo_kiir: autoDraw = false
+209.01004999999986	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+209.01004999999986	EXP	szo_kiir: text = "storka"
+209.52928999999946	EXP	szo_kiir: autoDraw = true
+211.76067499999954	DATA	Keydown: ArrowLeft
+211.7830899999999	EXP	szo_kiir: autoDraw = false
+211.7830899999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+211.7830899999999	EXP	szo_kiir: text = "skadai"
+212.31028999999944	EXP	szo_kiir: autoDraw = true
+213.45852000000014	DATA	Keydown: ArrowLeft
+213.49062499999943	EXP	szo_kiir: autoDraw = false
+213.49062499999943	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+213.49062499999943	EXP	szo_kiir: text = "jármű"
+214.0095449999999	EXP	szo_kiir: autoDraw = true
+214.81380499999977	DATA	Keydown: ArrowRight
+214.83622499999998	EXP	szo_kiir: autoDraw = false
+214.83622499999998	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+214.83622499999998	EXP	szo_kiir: text = "könyvtár"
+215.3601749999998	EXP	szo_kiir: autoDraw = true
+216.26215499999944	DATA	Keydown: ArrowRight
+216.2974349999995	EXP	szo_kiir: autoDraw = false
+216.2974349999995	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+216.2974349999995	EXP	szo_kiir: text = "félelem"
+216.82131000000024	EXP	szo_kiir: autoDraw = true
+217.616215	DATA	Keydown: ArrowRight
+217.6407049999998	EXP	szo_kiir: autoDraw = false
+217.6407049999998	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+217.6407049999998	EXP	szo_kiir: text = "szökkeny"
+218.16303999999946	EXP	szo_kiir: autoDraw = true
+222.16422999999943	DATA	Keydown: ArrowLeft
+222.19806999999943	EXP	szo_kiir: autoDraw = false
+222.19806999999943	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+222.19806999999943	EXP	szo_kiir: text = "gondol"
+222.71821499999987	EXP	szo_kiir: autoDraw = true
+223.5465949999998	DATA	Keydown: ArrowRight
+223.56949499999973	EXP	szo_kiir: autoDraw = false
+223.56949499999973	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+223.56949499999973	EXP	szo_kiir: text = "érzéketít"
+224.09236999999936	EXP	szo_kiir: autoDraw = true
+227.4269349999995	DATA	Keydown: ArrowLeft
+227.45889999999963	EXP	szo_kiir: autoDraw = false
+227.45889999999963	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+227.45889999999963	EXP	szo_kiir: text = "szerez"
+227.97905999999966	EXP	szo_kiir: autoDraw = true
+229.2840500000002	DATA	Keydown: ArrowRight
+229.31007499999942	EXP	szo_kiir: autoDraw = false
+229.31007499999942	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+229.31007499999942	EXP	szo_kiir: text = "indezget"
+229.83136000000013	EXP	szo_kiir: autoDraw = true
+233.48708499999975	DATA	Keydown: ArrowLeft
+233.51634000000013	EXP	szo_kiir: autoDraw = false
+233.51634000000013	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+233.51634000000013	EXP	szo_kiir: text = "környezetvédelem"
+234.04327999999987	EXP	szo_kiir: autoDraw = true
+236.1762149999995	DATA	Keydown: ArrowRight
+236.1980999999996	EXP	szo_kiir: autoDraw = false
+236.1980999999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+236.1980999999996	EXP	szo_kiir: text = "daragasi"
+236.72429999999986	EXP	szo_kiir: autoDraw = true
+240.08323999999993	DATA	Keydown: ArrowLeft
+240.11340000000018	EXP	szo_kiir: autoDraw = false
+240.11340000000018	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+240.11340000000018	EXP	szo_kiir: text = "űrlap"
+240.6371300000001	EXP	szo_kiir: autoDraw = true
+241.38495499999954	DATA	Keydown: ArrowRight
+241.410245	EXP	szo_kiir: autoDraw = false
+241.410245	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+241.410245	EXP	szo_kiir: text = "többszörös"
+241.93469000000005	EXP	szo_kiir: autoDraw = true
+242.95388000000003	DATA	Keydown: ArrowRight
+242.98354500000008	EXP	szo_kiir: autoDraw = false
+242.98354500000008	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+242.98354500000008	EXP	szo_kiir: text = "törékeny"
+243.50912499999959	EXP	szo_kiir: autoDraw = true
+244.39193499999965	DATA	Keydown: ArrowRight
+244.41341999999986	EXP	szo_kiir: autoDraw = false
+244.41341999999986	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+244.41341999999986	EXP	szo_kiir: text = "alapszik"
+244.9407999999994	EXP	szo_kiir: autoDraw = true
+245.66834999999992	DATA	Keydown: ArrowRight
+245.7000250000001	EXP	szo_kiir: autoDraw = false
+245.7000250000001	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+245.7000250000001	EXP	szo_kiir: text = "késik"
+246.2206900000001	EXP	szo_kiir: autoDraw = true
+246.88674999999967	DATA	Keydown: ArrowRight
+246.9114950000003	EXP	szo_kiir: autoDraw = false
+246.9114950000003	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+246.9114950000003	EXP	szo_kiir: text = "egyenrangú"
+247.4313199999997	EXP	szo_kiir: autoDraw = true
+248.3075399999998	DATA	Keydown: ArrowRight
+248.3354650000001	EXP	szo_kiir: autoDraw = false
+248.3354650000001	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+248.3354650000001	EXP	szo_kiir: text = "gyógyszerész"
+248.8584799999999	EXP	szo_kiir: autoDraw = true
+249.85712499999957	DATA	Keydown: ArrowRight
+249.88028500000016	EXP	szo_kiir: autoDraw = false
+249.88028500000016	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+249.88028500000016	EXP	szo_kiir: text = "állvány"
+250.40423999999985	EXP	szo_kiir: autoDraw = true
+251.05566	DATA	Keydown: ArrowRight
+251.0821049999995	EXP	szo_kiir: autoDraw = false
+251.0821049999995	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+251.0821049999995	EXP	szo_kiir: text = "háziasszony"
+251.60402499999964	EXP	szo_kiir: autoDraw = true
+252.6996650000001	DATA	Keydown: ArrowRight
+252.72481999999945	EXP	szo_kiir: autoDraw = false
+252.72481999999945	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+252.72481999999945	EXP	szo_kiir: text = "pálódás"
+253.2739449999999	EXP	szo_kiir: autoDraw = true
+258.01201500000025	DATA	Keydown: ArrowLeft
+258.0437499999998	EXP	szo_kiir: autoDraw = false
+258.0437499999998	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+258.0437499999998	EXP	szo_kiir: text = "numer"
+258.5674449999997	EXP	szo_kiir: autoDraw = true
+265.37961499999983	DATA	Keydown: ArrowRight
+265.40201499999966	EXP	szo_kiir: autoDraw = false
+265.40201499999966	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+265.40201499999966	EXP	szo_kiir: text = "bús"
+265.92402500000026	EXP	szo_kiir: autoDraw = true
+266.73092499999984	DATA	Keydown: ArrowRight
+266.75612999999976	EXP	szo_kiir: autoDraw = false
+266.75612999999976	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+266.75612999999976	EXP	szo_kiir: text = "határidejű"
+267.27818999999994	EXP	szo_kiir: autoDraw = true
+268.19491000000016	DATA	Keydown: ArrowRight
+268.2308149999999	EXP	szo_kiir: autoDraw = false
+268.2308149999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+268.2308149999999	EXP	szo_kiir: text = "példakép"
+268.75444999999945	EXP	szo_kiir: autoDraw = true
+269.49722999999994	DATA	Keydown: ArrowRight
+269.5216499999997	EXP	szo_kiir: autoDraw = false
+269.5216499999997	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+269.5216499999997	EXP	szo_kiir: text = "bámérő"
+270.05469	EXP	szo_kiir: autoDraw = true
+271.5518400000001	DATA	Keydown: ArrowLeft
+271.58241	EXP	szo_kiir: autoDraw = false
+271.58241	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+271.58241	EXP	szo_kiir: text = "kárpit"
+272.1166000000003	EXP	szo_kiir: autoDraw = true
+273.25823500000024	DATA	Keydown: ArrowRight
+273.2801849999996	EXP	szo_kiir: autoDraw = false
+273.2801849999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+273.2801849999996	EXP	szo_kiir: text = "bacon"
+273.8058300000002	EXP	szo_kiir: autoDraw = true
+276.3876249999994	DATA	Keydown: ArrowRight
+276.4154349999999	EXP	szo_kiir: autoDraw = false
+276.4154349999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+276.4154349999999	EXP	szo_kiir: text = "kontálás"
+276.93924999999945	EXP	szo_kiir: autoDraw = true
+279.2019549999995	DATA	Keydown: ArrowRight
+279.22734500000024	EXP	szo_kiir: autoDraw = false
+279.22734500000024	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+279.22734500000024	EXP	szo_kiir: text = "frisáles"
+279.7489749999995	EXP	szo_kiir: autoDraw = true
+281.0411549999999	DATA	Keydown: ArrowLeft
+281.0630650000003	EXP	szo_kiir: autoDraw = false
+281.0630650000003	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+281.0630650000003	EXP	szo_kiir: text = "stasassző"
+281.58871499999987	EXP	szo_kiir: autoDraw = true
+286.66251999999986	DATA	Keydown: ArrowLeft
+286.6947049999999	EXP	szo_kiir: autoDraw = false
+286.6947049999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+286.6947049999999	EXP	szo_kiir: text = "presbitérium"
+287.21309000000025	EXP	szo_kiir: autoDraw = true
+288.9206299999996	DATA	Keydown: ArrowRight
+288.9463599999999	EXP	szo_kiir: autoDraw = false
+288.9463599999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+288.9463599999999	EXP	szo_kiir: text = "sárgaréz"
+289.46321999999964	EXP	szo_kiir: autoDraw = true
+290.54344500000025	DATA	Keydown: ArrowRight
+290.5736900000002	EXP	szo_kiir: autoDraw = false
+290.5736900000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+290.5736900000002	EXP	szo_kiir: text = "köménymag"
+291.09562000000005	EXP	szo_kiir: autoDraw = true
+291.9568799999997	DATA	Keydown: ArrowRight
+291.97918500000014	EXP	szo_kiir: autoDraw = false
+291.97918500000014	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+291.97918500000014	EXP	szo_kiir: text = "feledékeny"
+292.50320999999985	EXP	szo_kiir: autoDraw = true
+293.29003999999986	DATA	Keydown: ArrowRight
+293.32280999999966	EXP	szo_kiir: autoDraw = false
+293.32280999999966	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+293.32280999999966	EXP	szo_kiir: text = "szokik"
+293.844685	EXP	szo_kiir: autoDraw = true
+296.25641499999983	DATA	Keydown: ArrowRight
+296.27809999999954	EXP	szo_kiir: autoDraw = false
+296.27809999999954	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+296.27809999999954	EXP	szo_kiir: text = "aprimitmus"
+296.80533000000014	EXP	szo_kiir: autoDraw = true
+299.44583499999953	DATA	Keydown: ArrowLeft
+299.47416499999963	EXP	szo_kiir: autoDraw = false
+299.47416499999963	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+299.47416499999963	EXP	szo_kiir: text = "téesz"
+299.99698999999964	EXP	szo_kiir: autoDraw = true
+301.95705999999973	DATA	Keydown: ArrowLeft
+301.97864500000014	EXP	szo_kiir: autoDraw = false
+301.97864500000014	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+301.97864500000014	EXP	szo_kiir: text = "sólyuk"
+302.50356000000005	EXP	szo_kiir: autoDraw = true
+305.8283949999996	DATA	Keydown: ArrowLeft
+305.85051999999996	EXP	szo_kiir: autoDraw = false
+305.85051999999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+305.85051999999996	EXP	szo_kiir: text = "örög"
+306.37373000000025	EXP	szo_kiir: autoDraw = true
+310.59213499999987	DATA	Keydown: ArrowLeft
+310.6231550000002	EXP	szo_kiir: autoDraw = false
+310.6231550000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+310.6231550000002	EXP	szo_kiir: text = "tévedzik"
+311.14477499999975	EXP	szo_kiir: autoDraw = true
+315.06692000000015	DATA	Keydown: ArrowRight
+315.0923350000003	EXP	szo_kiir: autoDraw = false
+315.0923350000003	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+315.0923350000003	EXP	szo_kiir: text = "kulcscsont"
+315.62092500000017	EXP	szo_kiir: autoDraw = true
+317.35108500000024	DATA	Keydown: ArrowRight
+317.3761199999999	EXP	szo_kiir: autoDraw = false
+317.3761199999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+317.3761199999999	EXP	szo_kiir: text = "csatázik"
+317.8979300000001	EXP	szo_kiir: autoDraw = true
+318.7875599999997	DATA	Keydown: ArrowRight
+318.8149800000001	EXP	szo_kiir: autoDraw = false
+318.8149800000001	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+318.8149800000001	EXP	szo_kiir: text = "viszkóz"
+319.3362399999997	EXP	szo_kiir: autoDraw = true
+321.93310500000007	DATA	Keydown: ArrowRight
+321.95755499999996	EXP	szo_kiir: autoDraw = false
+321.95755499999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+321.95755499999996	EXP	szo_kiir: text = "megalitikus"
+322.48294499999975	EXP	szo_kiir: autoDraw = true
+324.04908499999965	DATA	Keydown: ArrowRight
+324.0777799999996	EXP	szo_kiir: autoDraw = false
+324.0777799999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+324.0777799999996	EXP	szo_kiir: text = "onogur"
+324.5987299999997	EXP	szo_kiir: autoDraw = true
+325.61202499999945	DATA	Keydown: ArrowLeft
+325.63447499999984	EXP	szo_kiir: autoDraw = false
+325.63447499999984	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+325.63447499999984	EXP	szo_kiir: text = "kurzív"
+326.1650300000001	EXP	szo_kiir: autoDraw = true
+331.60143999999946	DATA	Keydown: ArrowRight
+331.6268149999996	EXP	szo_kiir: autoDraw = false
+331.6268149999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+331.6268149999996	EXP	szo_kiir: text = "felte"
+332.14786	EXP	szo_kiir: autoDraw = true
+334.17969	DATA	Keydown: ArrowLeft
+334.2097100000001	EXP	szo_kiir: autoDraw = false
+334.2097100000001	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+334.2097100000001	EXP	szo_kiir: text = "meztelenkedik"
+334.72950500000024	EXP	szo_kiir: autoDraw = true
+336.11261000000013	DATA	Keydown: ArrowRight
+336.1344250000002	EXP	szo_kiir: autoDraw = false
+336.1344250000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+336.1344250000002	EXP	szo_kiir: text = "firkál"
+336.65495999999985	EXP	szo_kiir: autoDraw = true
+337.43664999999964	DATA	Keydown: ArrowRight
+337.4646249999996	EXP	szo_kiir: autoDraw = false
+337.4646249999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+337.4646249999996	EXP	szo_kiir: text = "martalóc"
+337.9748499999996	EXP	szo_kiir: autoDraw = true
+341.33959499999946	DATA	Keydown: ArrowRight
+341.3614550000002	EXP	szo_kiir: autoDraw = false
+341.3614550000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+341.3614550000002	EXP	szo_kiir: text = "kitin"
+341.8858199999995	EXP	szo_kiir: autoDraw = true
+343.89444000000003	DATA	Keydown: ArrowLeft
+343.91698499999984	EXP	szo_kiir: autoDraw = false
+343.91698499999984	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+343.91698499999984	EXP	szo_kiir: text = "zsúfolódik"
+344.4398149999997	EXP	szo_kiir: autoDraw = true
+345.4128099999998	DATA	Keydown: ArrowRight
+345.44591500000024	EXP	szo_kiir: autoDraw = false
+345.44591500000024	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+345.44591500000024	EXP	szo_kiir: text = "irracionalizmus"
+345.9700949999996	EXP	szo_kiir: autoDraw = true
+347.48939499999955	DATA	Keydown: ArrowRight
+347.5110399999994	EXP	szo_kiir: autoDraw = false
+347.5110399999994	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+347.5110399999994	EXP	szo_kiir: text = "megrohad"
+348.03660500000024	EXP	szo_kiir: autoDraw = true
+349.0844699999998	DATA	Keydown: ArrowRight
+349.1143350000002	EXP	szo_kiir: autoDraw = false
+349.1143350000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+349.1143350000002	EXP	szo_kiir: text = "madársisak"
+349.637025	EXP	szo_kiir: autoDraw = true
+356.31628	DATA	Keydown: ArrowRight
+356.34047999999984	EXP	szo_kiir: autoDraw = false
+356.34047999999984	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+356.34047999999984	EXP	szo_kiir: text = "sifon"
+356.86172499999975	EXP	szo_kiir: autoDraw = true
+357.93420499999957	DATA	Keydown: ArrowRight
+357.9642050000002	EXP	szo_kiir: autoDraw = false
+357.9642050000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+357.9642050000002	EXP	szo_kiir: text = "pohárszék"
+358.48696500000005	EXP	szo_kiir: autoDraw = true
+365.29313999999977	DATA	Keydown: ArrowRight
+365.31602999999996	EXP	szo_kiir: autoDraw = false
+365.31602999999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+365.31602999999996	EXP	szo_kiir: text = "sövet"
+365.8396899999998	EXP	szo_kiir: autoDraw = true
+366.78343500000034	DATA	Keydown: ArrowLeft
+366.81249000000025	EXP	szo_kiir: autoDraw = false
+366.81249000000025	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+366.81249000000025	EXP	szo_kiir: text = "takaréktűzhely"
+367.3448699999999	EXP	szo_kiir: autoDraw = true
+369.14639999999963	DATA	Keydown: ArrowRight
+369.1718549999996	EXP	szo_kiir: autoDraw = false
+369.1718549999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+369.1718549999996	EXP	szo_kiir: text = "nyolgató"
+369.69377499999973	EXP	szo_kiir: autoDraw = true
+371.4433849999996	DATA	Keydown: ArrowLeft
+371.471955	EXP	szo_kiir: autoDraw = false
+371.471955	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+371.471955	EXP	szo_kiir: text = "abszolútérték"
+371.9958200000001	EXP	szo_kiir: autoDraw = true
+373.401425	DATA	Keydown: ArrowRight
+373.42590999999993	EXP	szo_kiir: autoDraw = false
+373.42590999999993	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+373.42590999999993	EXP	szo_kiir: text = "spratika"
+373.94297000000006	EXP	szo_kiir: autoDraw = true
+375.4976200000001	DATA	Keydown: ArrowLeft
+375.52669499999956	EXP	szo_kiir: autoDraw = false
+375.52669499999956	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+375.52669499999956	EXP	szo_kiir: text = "tipizál"
+376.04548499999964	EXP	szo_kiir: autoDraw = true
+378.1773050000002	DATA	Keydown: ArrowLeft
+378.20322500000026	EXP	szo_kiir: autoDraw = false
+378.20322500000026	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+378.20322500000026	EXP	szo_kiir: text = "retálhit"
+378.7123499999998	EXP	szo_kiir: autoDraw = true
+380.2991899999997	DATA	Keydown: ArrowLeft
+380.32443499999954	EXP	szo_kiir: autoDraw = false
+380.32443499999954	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+380.32443499999954	EXP	szo_kiir: text = "proszcénium"
+380.8445899999997	EXP	szo_kiir: autoDraw = true
+383.2052999999996	DATA	Keydown: ArrowRight
+383.2369600000002	EXP	szo_kiir: autoDraw = false
+383.2369600000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+383.2369600000002	EXP	szo_kiir: text = "fonógép"
+383.76286499999964	EXP	szo_kiir: autoDraw = true
+384.9074700000001	DATA	Keydown: ArrowRight
+384.9293950000001	EXP	szo_kiir: autoDraw = false
+384.9293950000001	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+384.9293950000001	EXP	szo_kiir: text = "illikázó"
+385.45327	EXP	szo_kiir: autoDraw = true
+388.38005499999963	DATA	Keydown: ArrowLeft
+388.4113699999998	EXP	szo_kiir: autoDraw = false
+388.4113699999998	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+388.4113699999998	EXP	szo_kiir: text = "áruszállítmány"
+388.93052999999964	EXP	szo_kiir: autoDraw = true
+396.29398500000025	DATA	Keydown: ArrowRight
+396.3165149999995	EXP	szo_kiir: autoDraw = false
+396.3165149999995	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+396.3165149999995	EXP	szo_kiir: text = "kúpol"
+396.84248000000025	EXP	szo_kiir: autoDraw = true
+399.71991999999955	DATA	Keydown: ArrowRight
+399.74744499999997	EXP	szo_kiir: autoDraw = false
+399.74744499999997	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+399.74744499999997	EXP	szo_kiir: text = "reztetély"
+400.2687049999995	EXP	szo_kiir: autoDraw = true
+402.75471500000003	DATA	Keydown: ArrowLeft
+402.7766249999995	EXP	szo_kiir: autoDraw = false
+402.7766249999995	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+402.7766249999995	EXP	szo_kiir: text = "lejmol"
+403.29932499999995	EXP	szo_kiir: autoDraw = true
+404.38823499999944	DATA	Keydown: ArrowLeft
+404.4101749999999	EXP	szo_kiir: autoDraw = false
+404.4101749999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+404.4101749999999	EXP	szo_kiir: text = "köpdös"
+404.9354549999998	EXP	szo_kiir: autoDraw = true
+405.85859999999957	DATA	Keydown: ArrowRight
+405.88916999999947	EXP	szo_kiir: autoDraw = false
+405.88916999999947	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+405.88916999999947	EXP	szo_kiir: text = "lovai"
+406.4210350000003	EXP	szo_kiir: autoDraw = true
+407.60490000000027	DATA	Keydown: ArrowRight
+407.6265249999997	EXP	szo_kiir: autoDraw = false
+407.6265249999997	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+407.6265249999997	EXP	szo_kiir: text = "gyásos"
+408.13731499999994	EXP	szo_kiir: autoDraw = true
+410.2514249999995	DATA	Keydown: ArrowLeft
+410.27637499999946	EXP	szo_kiir: autoDraw = false
+410.27637499999946	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+410.27637499999946	EXP	szo_kiir: text = "kelől"
+410.79497999999967	EXP	szo_kiir: autoDraw = true
+412.07852	DATA	Keydown: ArrowLeft
+412.1088600000003	EXP	szo_kiir: autoDraw = false
+412.1088600000003	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+412.1088600000003	EXP	szo_kiir: text = "büntetéspénz"
+412.63346999999976	EXP	szo_kiir: autoDraw = true
+414.39333499999975	DATA	Keydown: ArrowRight
+414.4156699999994	EXP	szo_kiir: autoDraw = false
+414.4156699999994	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+414.4156699999994	EXP	szo_kiir: text = "leverzsköl"
+414.9434799999999	EXP	szo_kiir: autoDraw = true
+416.80902499999956	DATA	Keydown: ArrowLeft
+416.8393999999998	EXP	szo_kiir: autoDraw = false
+416.8393999999998	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+416.8393999999998	EXP	szo_kiir: text = "tömődékhet"
+417.3519550000001	EXP	szo_kiir: autoDraw = true
+420.6412499999997	DATA	Keydown: ArrowLeft
+420.6631699999998	EXP	szo_kiir: autoDraw = false
+420.6631699999998	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+420.6631699999998	EXP	szo_kiir: text = "nagyoll"
+421.1750499999998	EXP	szo_kiir: autoDraw = true
+427.17007999999987	DATA	Keydown: ArrowRight
+427.19997499999954	EXP	szo_kiir: autoDraw = false
+427.19997499999954	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+427.19997499999954	EXP	szo_kiir: text = "kardorrú"
+427.72286499999973	EXP	szo_kiir: autoDraw = true
+429.1209399999998	DATA	Keydown: ArrowRight
+429.142965	EXP	szo_kiir: autoDraw = false
+429.142965	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+429.142965	EXP	szo_kiir: text = "prografej"
+429.66393999999946	EXP	szo_kiir: autoDraw = true
+431.9747099999995	DATA	Keydown: ArrowLeft
+432.00601	EXP	szo_kiir: autoDraw = false
+432.00601	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+432.00601	EXP	szo_kiir: text = "fentereg"
+432.5356750000001	EXP	szo_kiir: autoDraw = true
+435.7789050000001	DATA	Keydown: ArrowLeft
+435.8066950000002	EXP	szo_kiir: autoDraw = false
+435.8066950000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+435.8066950000002	EXP	szo_kiir: text = "kékít"
+436.3269399999999	EXP	szo_kiir: autoDraw = true
+437.4027599999999	DATA	Keydown: ArrowRight
+437.42658500000016	EXP	szo_kiir: autoDraw = false
+437.42658500000016	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+437.42658500000016	EXP	szo_kiir: text = "striguláz"
+437.9557249999998	EXP	szo_kiir: autoDraw = true
+439.7884199999998	DATA	Keydown: ArrowRight
+439.81958500000025	EXP	szo_kiir: autoDraw = false
+439.81958500000025	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+439.81958500000025	EXP	szo_kiir: text = "perifrázis"
+440.3411100000003	EXP	szo_kiir: autoDraw = true
+445.02296000000024	DATA	Keydown: ArrowLeft
+445.04475	EXP	szo_kiir: autoDraw = false
+445.04475	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+445.04475	EXP	szo_kiir: text = "kongóvörös"
+445.5724449999998	EXP	szo_kiir: autoDraw = true
+446.7799450000002	DATA	Keydown: ArrowRight
+446.8040799999999	EXP	szo_kiir: autoDraw = false
+446.8040799999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+446.8040799999999	EXP	szo_kiir: text = "kettősfém"
+447.32592999999997	EXP	szo_kiir: autoDraw = true
+448.58115	DATA	Keydown: ArrowRight
+448.60919499999994	EXP	szo_kiir: autoDraw = false
+448.60919499999994	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+448.60919499999994	EXP	szo_kiir: text = "dévánkozik"
+449.1317799999997	EXP	szo_kiir: autoDraw = true
+451.69653500000004	DATA	Keydown: ArrowRight
+451.7210100000002	EXP	szo_kiir: autoDraw = false
+451.7210100000002	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+451.7210100000002	EXP	szo_kiir: text = "hivatalnokoskodik"
+452.2476799999995	EXP	szo_kiir: autoDraw = true
+454.307855	DATA	Keydown: ArrowRight
+454.33613999999943	EXP	szo_kiir: autoDraw = false
+454.33613999999943	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+454.33613999999943	EXP	szo_kiir: text = "hátall"
+454.86032499999965	EXP	szo_kiir: autoDraw = true
+456.7558399999998	DATA	Keydown: ArrowLeft
+456.77743999999984	EXP	szo_kiir: autoDraw = false
+456.77743999999984	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+456.77743999999984	EXP	szo_kiir: text = "konverzál"
+457.3050750000002	EXP	szo_kiir: autoDraw = true
+459.67264499999965	DATA	Keydown: ArrowLeft
+459.6947	EXP	szo_kiir: autoDraw = false
+459.6947	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+459.6947	EXP	szo_kiir: text = "hosszall"
+460.2233299999998	EXP	szo_kiir: autoDraw = true
+462.91625999999997	DATA	Keydown: ArrowLeft
+462.9473049999997	EXP	szo_kiir: autoDraw = false
+462.9473049999997	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+462.9473049999997	EXP	szo_kiir: text = "pauzál"
+463.47288000000026	EXP	szo_kiir: autoDraw = true
+464.55722999999944	DATA	Keydown: ArrowLeft
+464.58013500000015	EXP	szo_kiir: autoDraw = false
+464.58013500000015	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+464.58013500000015	EXP	szo_kiir: text = "petél"
+465.10514499999954	EXP	szo_kiir: autoDraw = true
+467.02505999999994	DATA	Keydown: ArrowRight
+467.0470949999999	EXP	szo_kiir: autoDraw = false
+467.0470949999999	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+467.0470949999999	EXP	szo_kiir: text = "csoportáló"
+467.5697799999998	EXP	szo_kiir: autoDraw = true
+469.04594	DATA	Keydown: ArrowLeft
+469.07379500000025	EXP	szo_kiir: autoDraw = false
+469.07379500000025	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+469.07379500000025	EXP	szo_kiir: text = "polcol"
+469.5930499999995	EXP	szo_kiir: autoDraw = true
+471.08763499999986	DATA	Keydown: ArrowLeft
+471.10912999999977	EXP	szo_kiir: autoDraw = false
+471.10912999999977	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+471.10912999999977	EXP	szo_kiir: text = "nyüzsgölődik"
+471.63426999999956	EXP	szo_kiir: autoDraw = true
+473.02109999999993	DATA	Keydown: ArrowRight
+473.04296499999964	EXP	szo_kiir: autoDraw = false
+473.04296499999964	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+473.04296499999964	EXP	szo_kiir: text = "vároló"
+473.56998999999996	EXP	szo_kiir: autoDraw = true
+475.4563399999998	DATA	Keydown: ArrowLeft
+475.4813299999996	EXP	szo_kiir: autoDraw = false
+475.4813299999996	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+475.4813299999996	EXP	szo_kiir: text = "utálkodik"
+476.0103499999995	EXP	szo_kiir: autoDraw = true
+477.00471999999985	DATA	Keydown: ArrowRight
+477.02639499999987	EXP	szo_kiir: autoDraw = false
+477.02639499999987	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+477.02639499999987	EXP	szo_kiir: text = "megfogózik"
+477.5524349999996	EXP	szo_kiir: autoDraw = true
+479.2402949999996	DATA	Keydown: ArrowRight
+479.2701449999995	EXP	szo_kiir: autoDraw = false
+479.2701449999995	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+479.2701449999995	EXP	szo_kiir: text = "kvártélyoz"
+479.7918499999996	EXP	szo_kiir: autoDraw = true
+481.19559000000027	DATA	Keydown: ArrowRight
+481.220805	EXP	szo_kiir: autoDraw = false
+481.220805	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+481.220805	EXP	szo_kiir: text = "nyüvök"
+481.7407549999998	EXP	szo_kiir: autoDraw = true
+483.8812200000002	DATA	Keydown: ArrowLeft
+483.9068849999995	EXP	szo_kiir: autoDraw = false
+483.9068849999995	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+483.9068849999995	EXP	szo_kiir: text = "lazúroz"
+484.42740499999945	EXP	szo_kiir: autoDraw = true
+485.9568799999997	DATA	Keydown: ArrowLeft
+485.97754499999974	EXP	szo_kiir: autoDraw = false
+485.97754499999974	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+485.97754499999974	EXP	szo_kiir: text = "frizíroz"
+486.50271999999956	EXP	szo_kiir: autoDraw = true
+488.39437499999985	DATA	Keydown: ArrowRight
+488.4232750000001	EXP	szo_kiir: autoDraw = false
+488.4232750000001	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+488.4232750000001	EXP	szo_kiir: text = "svábtök"
+488.94751499999984	EXP	szo_kiir: autoDraw = true
+490.34814000000006	DATA	Keydown: ArrowRight
+490.37400499999967	EXP	szo_kiir: autoDraw = false
+490.37400499999967	EXP	szo_kiir: color = {"_rgb":[1,1,1]}
+490.37400499999967	EXP	szo_kiir: text = "tőzsérkedik"
+490.89591500000006	EXP	szo_kiir: autoDraw = true
+493.53916000000027	DATA	Keydown: ArrowRight
+493.5739999999996	EXP	szo_kiir: autoDraw = false
+493.5739999999996	EXP	koszi_szoveg: autoDraw = true
+496.51469499999985	DATA	Keydown: ArrowRight

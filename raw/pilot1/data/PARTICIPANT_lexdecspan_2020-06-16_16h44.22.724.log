@@ -1,0 +1,240 @@
+0.11058000003686175	EXP	Created Window = Window( name=Window, fullscr=true, color=#000000, units=norm, waitBlanking=true, autoLog=true, size=[1920,937] )
+6.599950000003446	DATA	Keydown: Control
+6.684730000037234	DATA	Keydown: v
+7.00523000000976	DATA	Keydown: Tab
+7.998569999996107	DATA	Keydown: Shift
+8.16526000003796	DATA	Keydown: F
+8.820594999997411	DATA	Keydown: Backspace
+9.714755000022706	DATA	Keydown: ArrowDown
+9.865984999982174	DATA	Keydown: ArrowDown
+10.633765000035055	DATA	Keydown: f
+10.782709999999497	DATA	Keydown: é
+10.876060000038706	DATA	Keydown: r
+11.031480000005104	DATA	Keydown: f
+11.117655000009108	DATA	Keydown: i
+11.254645000037272	DATA	Keydown: Tab
+11.989025000017136	DATA	Keydown: 1
+12.143015000037849	DATA	Keydown: 9
+12.266080000030342	DATA	Keydown: 9
+12.683064999990165	DATA	Keydown: 6
+12.84953000000678	DATA	Keydown: -
+13.049555000034161	DATA	Keydown: 1
+13.119944999984	DATA	Keydown: 0
+13.231995000038296	DATA	Keydown: -
+13.340055000036955	DATA	Keydown: 2
+13.482799999997951	DATA	Keydown: 2
+13.671210000000428	DATA	Keydown: Tab
+19.866700000013225	DATA	Keydown: 1
+20.06655500002671	DATA	Keydown: 6
+22.06576500000665	EXP	Created instruction_text1 = TextStim( name=instruction_text1, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Ön most szavakat fog látni.
+
+Ezek között lesznek o~, font=Arial, color=#ffffff, contrast=1, height=0.05, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+22.06690500001423	EXP	Created instruction_text2 = TextStim( name=instruction_text2, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Először két egyszerű példát mutatunk Önnek.
+
+Az el~, font=Arial, color=#FFFFFF, contrast=1, height=0.05, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+22.067715000011958	EXP	Created show_text = TextStim( name=show_text, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=asztal, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+22.068425000004936	EXP	Created text = TextStim( name=text, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=bzsmfsztal, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+22.069134999997914	EXP	Created instruction_text3 = TextStim( name=instruction_text3, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Pazar. Most kezdődik az igazi kísérlet. Néhány per~, font=Arial, color=#FFFFFF, contrast=1, height=0.1, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+22.069840000011027	EXP	Created szo_kiir = TextStim( name=szo_kiir, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=default text, font=Arial, color=#FFFFFF, contrast=1, height=0.2, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+22.07044500001939	EXP	Created koszi_szoveg = TextStim( name=koszi_szoveg, win=Window( name=Window, fullscr=true, color=#000000, ~), autoDraw=null, autoLog=true, units=norm, ori=null, opacity=1, pos=[0,0], size=undefined, text=Vége a kísérletnek. Köszönjük a részvételt!, font=arial, color=#ffffff, contrast=1, height=0.1, bold=null, italic=null, alignHoriz=left, alignVert=center, wrapWidth=1, flipHoriz=null, flipVert=null )
+22.113219999999274	EXP	instruction_text1: units = "norm"
+22.113219999999274	EXP	instruction_text1: ori = 0
+22.113219999999274	EXP	instruction_text1: opacity = 1
+22.113219999999274	EXP	instruction_text1: pos = [0,0]
+22.113219999999274	EXP	instruction_text1: size = undefined
+22.113219999999274	EXP	instruction_text1: text = "Ön most szavakat fog látni.\n\nEzek között lesznek olyanok, amelyeket ismer, de előfordulhatnak olyanok is, amelyeket nem ismer, sőt, vannak köztük kitalált szavak is. \n\nKérjük, ha ismeri a képernyőn látható szót, nyomja meg a JOBB kurzorbillentyűt.\nKérjük, ha NEM ismeri a képernyőn látható szót, vagy azt gondolja, nincs ilyen szó a magyarban, nyomja meg a BAL kurzorbillentyűt.\n\nAz 'Ismerem a szót' döntés itt most ezt jelenti: találkoztam már vele, és van valami elképzelésem a jelentéséről is.  \n\nNyomjon meg bármilyen billentyűt a folytatáshoz."
+22.113219999999274	EXP	instruction_text1: font = "Arial"
+22.113219999999274	EXP	instruction_text1: color = {"_rgb":[1,1,1]}
+22.113219999999274	EXP	instruction_text1: contrast = 1
+22.113219999999274	EXP	instruction_text1: height = 0.05
+22.113219999999274	EXP	instruction_text1: bold = false
+22.113219999999274	EXP	instruction_text1: italic = false
+22.113219999999274	EXP	instruction_text1: alignHoriz = "left"
+22.113219999999274	EXP	instruction_text1: alignVert = "center"
+22.113219999999274	EXP	instruction_text1: wrapWidth = 1
+22.113219999999274	EXP	instruction_text1: flipHoriz = false
+22.113219999999274	EXP	instruction_text1: flipVert = false
+22.113219999999274	EXP	instruction_text2: units = "norm"
+22.113219999999274	EXP	instruction_text2: ori = 0
+22.113219999999274	EXP	instruction_text2: opacity = 1
+22.113219999999274	EXP	instruction_text2: pos = [0,0]
+22.113219999999274	EXP	instruction_text2: size = undefined
+22.113219999999274	EXP	instruction_text2: text = "Először két egyszerű példát mutatunk Önnek.\n\nAz első szó létezik a magyarban, és valószínűleg Ön is ismeri. Itt nyomja majd meg a jobb kurzorbillentyűt.\nA második szó nem létezik a magyar nyelvben. Itt nyomja majd meg a bal kurzorbillentyűt.\n\nFontos, hogy a jobb gombot a jobb kezével, a bal gombot a bal kezével nyomja, ha tudja, és ne egy kezét használja a kísérletben.\n\nNyomjon meg bármilyen gombot a folytatáshoz."
+22.113219999999274	EXP	instruction_text2: font = "Arial"
+22.113219999999274	EXP	instruction_text2: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+22.113219999999274	EXP	instruction_text2: contrast = 1
+22.113219999999274	EXP	instruction_text2: height = 0.05
+22.113219999999274	EXP	instruction_text2: bold = false
+22.113219999999274	EXP	instruction_text2: italic = false
+22.113219999999274	EXP	instruction_text2: alignHoriz = "left"
+22.113219999999274	EXP	instruction_text2: alignVert = "center"
+22.113219999999274	EXP	instruction_text2: wrapWidth = 1
+22.113219999999274	EXP	instruction_text2: flipHoriz = false
+22.113219999999274	EXP	instruction_text2: flipVert = false
+22.113219999999274	EXP	show_text: units = "norm"
+22.113219999999274	EXP	show_text: ori = 0
+22.113219999999274	EXP	show_text: opacity = 1
+22.113219999999274	EXP	show_text: pos = [0,0]
+22.113219999999274	EXP	show_text: size = undefined
+22.113219999999274	EXP	show_text: text = "asztal"
+22.113219999999274	EXP	show_text: font = "Arial"
+22.113219999999274	EXP	show_text: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+22.113219999999274	EXP	show_text: contrast = 1
+22.113219999999274	EXP	show_text: height = 0.2
+22.113219999999274	EXP	show_text: bold = false
+22.113219999999274	EXP	show_text: italic = false
+22.113219999999274	EXP	show_text: alignHoriz = "left"
+22.113219999999274	EXP	show_text: alignVert = "center"
+22.113219999999274	EXP	show_text: wrapWidth = 1
+22.113219999999274	EXP	show_text: flipHoriz = false
+22.113219999999274	EXP	show_text: flipVert = false
+22.113219999999274	EXP	text: units = "norm"
+22.113219999999274	EXP	text: ori = 0
+22.113219999999274	EXP	text: opacity = 1
+22.113219999999274	EXP	text: pos = [0,0]
+22.113219999999274	EXP	text: size = undefined
+22.113219999999274	EXP	text: text = "bzsmfsztal"
+22.113219999999274	EXP	text: font = "Arial"
+22.113219999999274	EXP	text: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+22.113219999999274	EXP	text: contrast = 1
+22.113219999999274	EXP	text: height = 0.2
+22.113219999999274	EXP	text: bold = false
+22.113219999999274	EXP	text: italic = false
+22.113219999999274	EXP	text: alignHoriz = "left"
+22.113219999999274	EXP	text: alignVert = "center"
+22.113219999999274	EXP	text: wrapWidth = 1
+22.113219999999274	EXP	text: flipHoriz = false
+22.113219999999274	EXP	text: flipVert = false
+22.113219999999274	EXP	instruction_text3: units = "norm"
+22.113219999999274	EXP	instruction_text3: ori = 0
+22.113219999999274	EXP	instruction_text3: opacity = 1
+22.113219999999274	EXP	instruction_text3: pos = [0,0]
+22.113219999999274	EXP	instruction_text3: size = undefined
+22.113219999999274	EXP	instruction_text3: text = "Pazar. Most kezdődik az igazi kísérlet. Néhány percig fog tartani. Nem kell nagyon sietnie, de igyekezzen gyorsan válaszolni.\n\nNe feledje, ha tudja, a jobb gombot a jobbkezével, a bal gombot a balkezével nyomja le.\n\nNyomjon meg bármilyen gombot a folytatáshoz."
+22.113219999999274	EXP	instruction_text3: font = "Arial"
+22.113219999999274	EXP	instruction_text3: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+22.113219999999274	EXP	instruction_text3: contrast = 1
+22.113219999999274	EXP	instruction_text3: height = 0.1
+22.113219999999274	EXP	instruction_text3: bold = false
+22.113219999999274	EXP	instruction_text3: italic = false
+22.113219999999274	EXP	instruction_text3: alignHoriz = "left"
+22.113219999999274	EXP	instruction_text3: alignVert = "center"
+22.113219999999274	EXP	instruction_text3: wrapWidth = 1
+22.113219999999274	EXP	instruction_text3: flipHoriz = false
+22.113219999999274	EXP	instruction_text3: flipVert = false
+22.113219999999274	EXP	szo_kiir: units = "norm"
+22.113219999999274	EXP	szo_kiir: ori = 0
+22.113219999999274	EXP	szo_kiir: opacity = 1
+22.113219999999274	EXP	szo_kiir: pos = [0,0]
+22.113219999999274	EXP	szo_kiir: size = undefined
+22.113219999999274	EXP	szo_kiir: text = "default text"
+22.113219999999274	EXP	szo_kiir: font = "Arial"
+22.113219999999274	EXP	szo_kiir: color = {"_hex":"#FFFFFF","_rgb":[1,1,1]}
+22.113219999999274	EXP	szo_kiir: contrast = 1
+22.113219999999274	EXP	szo_kiir: height = 0.2
+22.113219999999274	EXP	szo_kiir: bold = false
+22.113219999999274	EXP	szo_kiir: italic = false
+22.113219999999274	EXP	szo_kiir: alignHoriz = "left"
+22.113219999999274	EXP	szo_kiir: alignVert = "center"
+22.113219999999274	EXP	szo_kiir: wrapWidth = 1
+22.113219999999274	EXP	szo_kiir: flipHoriz = false
+22.113219999999274	EXP	szo_kiir: flipVert = false
+22.113219999999274	EXP	koszi_szoveg: units = "norm"
+22.113219999999274	EXP	koszi_szoveg: ori = 0
+22.113219999999274	EXP	koszi_szoveg: opacity = 1
+22.113219999999274	EXP	koszi_szoveg: pos = [0,0]
+22.113219999999274	EXP	koszi_szoveg: size = undefined
+22.113219999999274	EXP	koszi_szoveg: text = "Vége a kísérletnek. Köszönjük a részvételt!"
+22.113219999999274	EXP	koszi_szoveg: font = "arial"
+22.113219999999274	EXP	koszi_szoveg: color = {"_rgb":[1,1,1]}
+22.113219999999274	EXP	koszi_szoveg: contrast = 1
+22.113219999999274	EXP	koszi_szoveg: height = 0.1
+22.113219999999274	EXP	koszi_szoveg: bold = false
+22.113219999999274	EXP	koszi_szoveg: italic = false
+22.113219999999274	EXP	koszi_szoveg: alignHoriz = "left"
+22.113219999999274	EXP	koszi_szoveg: alignVert = "center"
+22.113219999999274	EXP	koszi_szoveg: wrapWidth = 1
+22.113219999999274	EXP	koszi_szoveg: flipHoriz = false
+22.113219999999274	EXP	koszi_szoveg: flipVert = false
+22.113219999999274	EXP	instruction_text1: autoDraw = true
+47.40048000001116	DATA	Mouse: 2 button down, pos=(1063,848)
+47.49716999998782	DATA	Mouse: 2 button down, pos=(1063,848)
+48.93613500002539	DATA	Mouse: 0 button down, pos=(995,821)
+49.03224999998929	DATA	Mouse: 0 button down, pos=(995,821)
+50.334050000004936	DATA	Mouse: 0 button down, pos=(995,821)
+50.441310000023805	DATA	Mouse: 0 button down, pos=(995,821)
+51.35718500002986	DATA	Mouse: 0 button down, pos=(995,821)
+51.43134499998996	DATA	Mouse: 0 button down, pos=(995,821)
+52.744040000019595	DATA	Keydown:  
+52.76611500000581	EXP	instruction_text1: autoDraw = false
+52.76611500000581	EXP	instruction_text2: autoDraw = true
+66.0238450000179	DATA	Mouse: 0 button down, pos=(902,608)
+66.1885600000387	DATA	Mouse: 0 button down, pos=(902,608)
+67.00040499999886	DATA	Keydown:  
+67.01655000000028	EXP	instruction_text2: autoDraw = false
+67.55642999999691	EXP	show_text: autoDraw = true
+69.00489500002004	DATA	Mouse: 2 button down, pos=(902,608)
+69.07437500002561	DATA	Mouse: 2 button down, pos=(902,608)
+72.29139999998733	DATA	Mouse: 2 button down, pos=(836,625)
+72.38189499999862	DATA	Mouse: 2 button down, pos=(836,625)
+72.95303999999305	DATA	Mouse: 0 button down, pos=(800,563)
+73.04819000000134	DATA	Mouse: 0 button down, pos=(800,563)
+73.33202500001062	DATA	Mouse: 2 button down, pos=(800,563)
+73.38839000003645	DATA	Mouse: 2 button down, pos=(800,563)
+74.02819500002079	DATA	Mouse: 0 button down, pos=(864,513)
+74.1235699999961	DATA	Mouse: 0 button down, pos=(864,513)
+74.76652499998454	DATA	Mouse: 2 button down, pos=(864,513)
+74.85042500001146	DATA	Mouse: 2 button down, pos=(864,513)
+75.27675499999896	DATA	Mouse: 2 button down, pos=(864,513)
+75.41036999999778	DATA	Mouse: 2 button down, pos=(864,513)
+76.1083300000173	DATA	Mouse: 2 button down, pos=(841,551)
+76.19845000002533	DATA	Mouse: 2 button down, pos=(841,551)
+76.26292000000831	DATA	Mouse: 2 button down, pos=(841,551)
+76.34873500000685	DATA	Mouse: 2 button down, pos=(841,551)
+76.41898499999661	DATA	Mouse: 2 button down, pos=(841,551)
+76.50226999999722	DATA	Mouse: 2 button down, pos=(841,551)
+76.58577000000514	DATA	Mouse: 2 button down, pos=(841,551)
+76.67641000001458	DATA	Mouse: 2 button down, pos=(841,551)
+77.01925000001211	DATA	Mouse: 2 button down, pos=(828,548)
+77.13219999999274	DATA	Mouse: 2 button down, pos=(828,548)
+77.36532500002068	DATA	Mouse: 2 button down, pos=(828,548)
+77.43213500001002	DATA	Mouse: 2 button down, pos=(828,548)
+78.40147500002058	DATA	Mouse: 2 button down, pos=(897,467)
+78.48957500001416	DATA	Mouse: 2 button down, pos=(897,467)
+79.08493000001181	DATA	Mouse: 2 button down, pos=(823,427)
+79.16061500000069	DATA	Mouse: 2 button down, pos=(823,427)
+79.56703000003472	DATA	Mouse: 2 button down, pos=(823,427)
+79.63503000000492	DATA	Mouse: 2 button down, pos=(823,426)
+79.81799499999033	DATA	Mouse: 2 button down, pos=(950,380)
+79.93435500003397	DATA	Mouse: 2 button down, pos=(951,380)
+80.58488999999827	DATA	Mouse: 2 button down, pos=(1011,334)
+80.7005750000244	DATA	Mouse: 2 button down, pos=(1011,334)
+82.05199499998707	DATA	Mouse: 2 button down, pos=(892,485)
+82.11767499998678	DATA	Mouse: 2 button down, pos=(892,486)
+83.86973999999464	DATA	Mouse: 0 button down, pos=(899,456)
+83.95617499999935	DATA	Mouse: 0 button down, pos=(899,456)
+84.21265500003938	DATA	Mouse: 0 button down, pos=(899,456)
+84.32040000002598	DATA	Mouse: 0 button down, pos=(899,456)
+84.719550000038	DATA	Mouse: 0 button down, pos=(899,456)
+84.768619999988	DATA	Mouse: 0 button down, pos=(899,456)
+84.84435500000836	DATA	Mouse: 0 button down, pos=(899,456)
+84.90535499999532	DATA	Mouse: 0 button down, pos=(899,456)
+84.96245500002988	DATA	Mouse: 0 button down, pos=(899,456)
+85.05641000001924	DATA	Mouse: 0 button down, pos=(899,456)
+85.41956000000937	DATA	Mouse: 0 button down, pos=(899,456)
+85.48841500002891	DATA	Mouse: 0 button down, pos=(899,456)
+85.61941500002285	DATA	Mouse: 0 button down, pos=(899,456)
+85.70940500003053	DATA	Mouse: 0 button down, pos=(899,456)
+85.8124700000044	DATA	Mouse: 0 button down, pos=(899,456)
+85.90154500002973	DATA	Mouse: 0 button down, pos=(899,456)
+85.97778000001563	DATA	Mouse: 0 button down, pos=(899,456)
+86.04548500000965	DATA	Mouse: 0 button down, pos=(899,456)
+86.43632500001695	DATA	Mouse: 2 button down, pos=(900,464)
+86.53638000000501	DATA	Mouse: 2 button down, pos=(900,467)
+86.97639000002528	DATA	Mouse: 0 button down, pos=(887,441)
+87.0754050000105	DATA	Mouse: 0 button down, pos=(887,441)
+87.62380000000121	DATA	Keydown: 0
+87.90133999998216	DATA	Keydown: ArrowRight
+87.91802500002086	EXP	show_text: autoDraw = false
+88.4372999999905	EXP	text: autoDraw = true
+90.17512500000885	DATA	Keydown: Escape
