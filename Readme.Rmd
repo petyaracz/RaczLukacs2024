@@ -21,6 +21,7 @@ library(knitr)
 library(ggthemes)
 library(patchwork)
 library(sjPlot)
+library(broom.mixed)
 
 all = read_tsv('tidy/d.tsv')
 models = read_tsv('analysis/model_table.tsv')
@@ -31,7 +32,6 @@ d = filt %>%
   filter(!nonce_word,correct)
 
 load('analysis/models/fit15.Rda')
-load('analysis/models/lmm1.Rda')
 
 ```
 
@@ -115,6 +115,8 @@ d %>%
   scale_x_continuous(breaks = seq(5,95,5), name = 'age')
 ```
 
+The study was approved by the United Ethical Review Committee for Research in Psychology (EPKEB-2018/87).
+
 ### Procedure
 
 Participants completed the task on their home computers. The experiment did not work on tablets and mobile phones. Each participant saw every stimulus word in a random order. The task was set up with two practice trials, one with a common Hungarian form that participants had to say "yes" to by pressing the right arrow on the keyboard, and a nonexistent form that they had to say "no" to by pressing the left arrow. The correct answer for the practice trials was spelt out in the instructions. The main experiment was coded in jspsych (@de2015jspsych) and run online on Pavlovia (@peirce2007psychopy). Participants saw each of the 250 trials once, in a random order.
@@ -159,7 +161,7 @@ p3 = d %>%
   theme_bw() +
   geom_smooth() +
   xlab('participant age') +
-  ylab('number of responses')
+  ylab('number of yes responses')
 
 p1 + p3 + p2
 ```
@@ -183,13 +185,71 @@ models %>%
   kable('simple', digits = 0)
 ```
 
-We transformed the age predictor into a categorical variable with three levels, -14, 15-64, and 65+. We then refit the generalized additive model as a hierarchical linear model, predicting response time from word familiarity, participant vocabulary size, and the categorical age predictor, using the lme4 library (@bates2014fitting). Plots were made using `itsadug` (@itsadug) and `sjplot` (@sjplot).
-
-These two models are reported below.
+The best model is reported below. Plots were made using `itsadug` (@itsadug) and `sjplot` (@sjplot).
 
 ### Results
 
-Participant vocabulary size, age, and relative word familiarity together predict response time in correct responses to visual targets of existing words in our participant sample. The best model of our responses posits non-linear relationships between our predictors and response times. Interpreting a three-way non-linear numeric interaction is daunting. The effect plot can be seen below.
+Participant vocabulary size, age, and relative word familiarity together predict response time in correct responses to visual targets of existing words in our participant sample. The best model of our responses posits non-linear relationships between our predictors and response times. 
+
+The aggregated predicted effects of the three predictors can be seen below.
+
+```{r indivgamm, fig.width = 9, fig.height = 3}
+d$pred = predict(fit15)
+
+p1 = d %>% 
+  group_by(id,participant_vocabulary_size,participant_age) %>% 
+  summarise(
+    mean = mean(pred),
+    `yes responses` = n()
+            ) %>% 
+  ggplot(aes(participant_vocabulary_size,mean)) +
+  geom_point(aes(size = `yes responses`), alpha = .3) +
+  geom_smooth() +
+  theme_bw() +
+  xlab('participant vocabulary size') +
+  ylab('mean predicted rt') +
+  ylim(0.5,3.2) +
+  guides(size = 'none')
+
+p2 = d %>% 
+  group_by(id,participant_vocabulary_size,participant_age) %>% 
+  summarise(
+    mean = mean(pred),
+    `yes responses` = n()
+            ) %>% 
+  ggplot(aes(participant_age,mean)) +
+  geom_point(aes(size = `yes responses`), alpha = .3) +
+  geom_smooth() +
+  theme_bw() +
+  xlab('participant age') +
+  # ylab('mean predicted rt') +
+  ylim(0.5,3.2) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  guides(size = 'none')
+
+p3 = d %>% 
+  group_by(word,word_familiarity) %>% 
+  summarise(
+    mean = mean(pred),
+    `yes responses` = n()
+            ) %>% 
+  ggplot(aes(word_familiarity,mean)) +
+  geom_point(aes(size = `yes responses`), alpha = .3, shape = 17) +
+  geom_smooth() +
+  theme_bw() +
+  xlab('word familiarity') +
+  # ylab('mean predicted rt') +
+  ylim(0.5,3.2) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  guides(size = 'none')
+
+p1 + p2 + p3
+
+```
+
+Participants with larger vocabularies are, overall, faster in their "yes" responses (left panel), and this drop is steeper across smaller than across larger vocabulary sizes. There amount of variation is higher for participants with very large vocabularies, so we cannot say whether they are actually as fast as those with slightly smaller vocabularies or slightly slower. 
+
+Very young and older participants are slower (middle panel). Word familiarity has a by and large linear effect: more familiar words are identified faster. The issue here is that the three effects interact in ways that are not visible when we plot aggregates for the individual effects. The three-way interaction can be seen below.
 
 ```{r gammplot, fig.width = 9, fig.height = 9}
 plot(fit15, select = 1, hcolors = terrain.colors(8))
@@ -197,26 +257,47 @@ plot(fit15, select = 1, hcolors = terrain.colors(8))
 
 This is a topography plot. Contours show response times. Hills are slow responses, valleys are fast responses. Each panel shows one range of word familiarity, from 1-6 (bottom left) to 44-50 (top right). Overall, as word familiarity goes up, the panels get greener: participants respond faster to more familiar words. The horizontal axis is participant age, the vertical axis is participant vocabulary size. As we saw above, some combinations of these don't exist. Only children and a small number of older adults have vocabularies that are smaller in size than 20. Children under 14 and adults over 65 are slower than the rest of the sample. These differences are more apparent when participants have smaller vocabularies and/or respond to less familiar words. Across participants with large vocabularies, younger and older participants are much less slower than the middle range of the sample. More or less everyone responds to very familiar words with the same speed. In sum, there is a U-shaped polynomial effect, participant age, that interacts with two more-or-less linear effects, participant vocabulary size and word familiarity.
 
-We elected to explore this relationship by refitting the additive model using linear predictors for vocabulary size and word familiarity and a three-level factor for participant age: ages of 9-14, 15-64, and 65+. We kept the three-way interaction and the grouping factors for participant and word.
+There are three ways to visualize this three-way interaction. First, we plot predictions for response times across vocabulary size and word familiarity for participants aged 14, 25, and 70, respectively. The plot can be seen below.
 
-The effect plot for the linear model can be seen below.
+```{r sjplot1, fig.width = 9.5, fig.height = 3}
+plot_model(fit15, type = "pred", terms = c("participant_vocabulary_size","word_familiarity [20,30,40]","participant_age [14, 25, 70]")) +
+  theme_bw() +
+  scale_colour_viridis_d() +
+  labs(colour = 'word familiarity') +
+  xlab('participant vocabulary size') +
+  ylab('predicted response time')
 
-```{r lmplot}
-# right so the predictors were centralised. so i'm moving them back.
-plot_model(lmm1, type = "pred", terms = c("c_word_familiarity","c_participant_vocabulary_size","participant_age_group")) +
-  scale_colour_colorblind(name = "participant\nvocabulary size", labels = c("~25", "~34", "~42")) +
-  scale_x_continuous(breaks = seq(-20,20,10), labels = seq(5,45,10)) +
-  xlab('word familiarity') +
-  ylab('response time') +
-  ggtitle('age group') +
-  theme_bw()
 ```
 
-The three panels show participant age group: adults (most of the sample) to the left, children (-14) in the middle, and older adults (65+) to the right. Participant vocabulary size is grouped into three thirds: low (around 25), mid (around 34-35) and high (around 42). The horizontal axis is word familiarity, the vertical axis is response time.
+Each panel shows one age group, 14, 25, and 70, respectively. The horizontal axis is participant vocabulary size, the vertical axis is predicted response time. Only smooths depicting trend lines are shown, for three discretized levels of word familiarity, low (20), mid (30) and high (40). A weak effect of word familiarity is seen overall: responses to less familiar words are slower than to more familiar words in all three panels. Finally, a larger participant vocabulary size translates to faster responses, but only for the younger and older groups. There is a mild vocabulary effect in the right-hand side of the middle panel, for the 25-year-olds: participants with very large vocabularies (45-50) are faster than the mid-range (around 30). As we noted above, participants who have small vocabularies (in the 10-20 range) have very few "yes" answers and so their estimates are less reliable, as shown by the larger margin of error in the left-hand side of the middle panel.
 
-Participants get faster with more familiar words across the board. This is evident in each panel. Children are slower than adults and older adults are slower than children, as seen in the intercept of the lines in the three panels: they are higher in panels 2-3 than in panel 1. Vocabulary size matters, but mostly only for children and older adults. Finally, the error bars are thinner for predicted effects in the adult sample, as this was by far the most numerous.
+Second, we plot predicted response times across age and word familiarity for participants with a vocabulary size of 15 (small), 35 (mid-sized), or 47 (large). 
 
-It is true that our age groups are post hoc. The predictions of the linear model are useful to interpret the more complex results of the more fine-grained additive model, but the results themselves are very similar.
+```{r sjplot2, fig.width = 9.5, fig.height = 3}
+plot_model(fit15, type = "pred", terms = c("participant_age","word_familiarity [20,30,40]","participant_vocabulary_size [15, 35, 47]")) +
+  theme_bw() +
+  scale_colour_viridis_d(option = 'B') +
+  labs(colour = 'word familiarity') +
+  xlab('participant age') +
+  ylab('predicted response time')
+
+```
+
+This plot shows that older speakers with a small vocabulary are much slower than children with a small vocabulary, and that this difference largely goes away for large vocabulary sizes -- here, older speakers are still slower, but not by much.
+
+Third, we plot predicted response times across vocabulary size and age to words with a familiarity of 20 (low), 30 (mid), or 40 (high).
+
+```{r sjplot3, fig.width = 9.5, fig.height = 3}
+plot_model(fit15, type = "pred", terms = c("participant_vocabulary_size","participant_age [14, 25, 70]","word_familiarity [20,30,40]")) +
+  theme_bw() +
+  scale_colour_viridis_d(option = 'C') +
+  labs(colour = 'participant\nvocabulary size') +
+  xlab('participant age') +
+  ylab('predicted response time')
+
+```
+
+This shows that age- and vocabulary size-related changes in response speed are largely independent of word familiarity, at least in its low-mid-to-high range.
 
 ### Discussion
 
@@ -224,9 +305,9 @@ Participant vocabulary size predicts response time of correct responses to visua
 
 Participant age has a much larger effect on lexical decision times. Children converge to adult lexical decision speed in their mid-teens and adults start to slow down over the age of 65 or so. When we look at the topography plot of the model predictions, we see inflection points at the entrance to high school (12 or 14 in Hungary) and the age of retirement (62 or 64 in Hungary) meaning that the shifts can be as easily explained by lifestyle changes as by cognitive maturing and decline. 
 
-Responses to very familiar words constitute a threshold on response times (responses to these are very fast). This is an effect that a linear model has a harder time capturing. Overall, people respond to familar words faster, and this is by far the largest effect in our data, over one second.
+Responses to very familiar words constitute a threshold on response times (responses to these are very fast). Overall, people respond to familiar words faster.
 
-Lexical decision data will have inherent structural properties that make it hard to analyze. Older people have larger vocabularies, on average. People with larger vocabularies will provide more "yes" responses, and, by proxy, response times. In a convenience sample, the 18-30 range will be most likely university students and so highly educated. The additive model is difficult to interpret, while the linear model, used to shed light on the directionality and interaction of the effects, might be broadly underfit.
+Lexical decision data will have inherent structural properties that make it hard to analyze. Older people have larger vocabularies, on average. People with larger vocabularies will provide more "yes" responses, and, by proxy, response times. In a convenience sample, the 18-30 range will be most likely university students and so highly educated.
 
 Still, to our knowledge, ours is one in a limited set of examples that investigate the joint effect of vocabulary size and age in lexical decision. Our results strongly suggest that vocabulary size cannot be reduced to a function of age. This can be seen in the effect interactions in the linear model. It can also be seen when we look at the model comparisons for the additive model: we get a worse model fit both in terms of AIC and ML score if we take out either vocabulary size (AIC diff: `r vocab_size_aic_diff`, ML score diff: `r vocab_size_mls_diff`) or age (AIC diff: `r age_aic_diff`, ML score diff: `r age_mls_diff`). Note that though the vocabulary size measure was invented by us for this study while age is a biological eventuality, these numbers mean that vocabulary size proved to be the better predictor in terms of variable importance. To us, this is the enduring conclusion of our study.
 
