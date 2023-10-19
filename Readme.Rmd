@@ -260,13 +260,13 @@ This is a topography plot. Contours show response times. Hills are slow response
 There are three ways to visualize this three-way interaction. First, we plot predictions for response times across vocabulary size and word familiarity for participants aged 14, 25, and 70, respectively. The plot can be seen below.
 
 ```{r sjplot1, fig.width = 9.5, fig.height = 3}
-plot_model(fit15, type = "pred", terms = c("participant_vocabulary_size","word_familiarity [20,30,40]","participant_age [14, 25, 70]")) +
+p1 = plot_model(fit15, type = "pred", terms = c("participant_vocabulary_size","word_familiarity [20,30,40]","participant_age [14, 25, 70]")) +
   theme_bw() +
-  scale_colour_viridis_d() +
+  scale_colour_viridis_d(option = 'viridis') +
   labs(colour = 'word familiarity') +
   xlab('participant vocabulary size') +
   ylab('predicted response time')
-
+p1
 ```
 
 Each panel shows one age group, 14, 25, and 70, respectively. The horizontal axis is participant vocabulary size, the vertical axis is predicted response time. Only smooths depicting trend lines are shown, for three discretized levels of word familiarity, low (20), mid (30) and high (40). A weak effect of word familiarity is seen overall: responses to less familiar words are slower than to more familiar words in all three panels. Finally, a larger participant vocabulary size translates to faster responses, but only for the younger and older groups. There is a mild vocabulary effect in the right-hand side of the middle panel, for the 25-year-olds: participants with very large vocabularies (45-50) are faster than the mid-range (around 30). As we noted above, participants who have small vocabularies (in the 10-20 range) have very few "yes" answers and so their estimates are less reliable, as shown by the larger margin of error in the left-hand side of the middle panel.
@@ -274,13 +274,13 @@ Each panel shows one age group, 14, 25, and 70, respectively. The horizontal axi
 Second, we plot predicted response times across age and word familiarity for participants with a vocabulary size of 15 (small), 35 (mid-sized), or 47 (large). 
 
 ```{r sjplot2, fig.width = 9.5, fig.height = 3}
-plot_model(fit15, type = "pred", terms = c("participant_age","word_familiarity [20,30,40]","participant_vocabulary_size [15, 35, 47]")) +
+p2 = plot_model(fit15, type = "pred", terms = c("participant_age","word_familiarity [20,30,40]","participant_vocabulary_size [15, 35, 47]")) +
   theme_bw() +
-  scale_colour_viridis_d(option = 'B') +
+  scale_colour_viridis_d(option = 'viridis') +
   labs(colour = 'word familiarity') +
   xlab('participant age') +
   ylab('predicted response time')
-
+p2
 ```
 
 This plot shows that older speakers with a small vocabulary are much slower than children with a small vocabulary, and that this difference largely goes away for large vocabulary sizes -- here, older speakers are still slower, but not by much.
@@ -288,13 +288,18 @@ This plot shows that older speakers with a small vocabulary are much slower than
 Third, we plot predicted response times across vocabulary size and age to words with a familiarity of 20 (low), 30 (mid), or 40 (high).
 
 ```{r sjplot3, fig.width = 9.5, fig.height = 3}
-plot_model(fit15, type = "pred", terms = c("participant_vocabulary_size","participant_age [14, 25, 70]","word_familiarity [20,30,40]")) +
+p3 = plot_model(fit15, type = "pred", terms = c("participant_age","participant_vocabulary_size [15, 35, 47]","word_familiarity [20,30,40]")) +
   theme_bw() +
-  scale_colour_viridis_d(option = 'C') +
+  scale_colour_viridis_d(option = 'rocket') +
   labs(colour = 'participant\nvocabulary size') +
   xlab('participant age') +
   ylab('predicted response time')
+p3
+```
 
+```{r sjplots, eval=F}
+p1 + (p2 + theme(legend.position = 'none') + ggtitle('')) + (p3 + ggtitle('')) + plot_layout(ncol = 1, guides = 'collect') + plot_annotation(tag_levels = 'A')
+ggsave('figures/sjplots.png', width = 10, height = 10)
 ```
 
 This shows that age- and vocabulary size-related changes in response speed are largely independent of word familiarity, at least in its low-mid-to-high range.
