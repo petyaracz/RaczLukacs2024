@@ -1,14 +1,6 @@
-This is the supplementary information to the paper “Participants
-something something vocabulary something something age something
-something lexical decision task”.
+This is the supplementary information to the paper “Older participants are slower in a visual lexical decision task, but this is attenuated by a large vocabulary”.
 
 ## Links
-
-The lit review is
-[**here**](https://docs.google.com/document/d/1I3r6fjOtjBF95PoaWLjYHcfncjogV2s-gm3Kdo4bSF0/edit?usp=sharing).
-
-The ms is
-[**here**](https://docs.google.com/document/d/1PGReJcHZ-a-8hOUA-bW_4K0QnhcUrDkmvvFpVhzc5A4/edit?usp=sharing).
 
 The code to run the experiments on Gitlab for pilot 1, pilot 2, and the
 main experiment are
@@ -21,12 +13,12 @@ and
 
 We ran two pilot experiments and a main experiment. In the paper, we
 mostly talk about the main experiment and don’t like talking about pilot
-1 and 2, much like people do about [the East Pole and the West
+1 and 2, much like people avoid talking about [the East Pole and the West
 Pole](https://standardebooks.org/ebooks/a-a-milne/winnie-the-pooh/text/chapter-9).
 
 The stimulus list for pilot 1 was based on a frequency list from
-[Hungarian Webcorpus 2](https://hlt.bme.hu/en/resources/webcorpus2). We
-host this list in this repository. Cite us and the original if you want
+[Hungarian Webcorpus 2](https://hlt.bme.hu/en/resources/webcorpus2). __We
+host this list in this repository.__ Cite us and the original if you want
 to use it. Subsequent stimulus lists were based on results from pilot 1.
 
 -   src: corpus data in various processed forms
@@ -249,27 +241,31 @@ examples: ‘pohár’ glass, ‘extrém’ extreme). It was established based o
 responses by a separate set of participants in the baseline experiment.
 
 Participant vocabulary size was established as follows. Each participant
-responded to nonce words and real words. The real words were in
-pre-established familiarity bins (from 1, most familiar, to 50, least
-familiar). We identified the most familiar bin in which the participant
-responded “no” to more than one real word. The number of this bin became
-the participant’s vocabulary size, used in the analysis. Here is an
-example. Bin 4, a relatively familiar bin, has four words in it: ‘barát’
-(friend), ‘dolog’ (thing), ‘törékeny’ (fragile), ‘karakter’ (character).
-Bin 44, a relatively unfamiliar bin, has ‘glosszáz’ (to gloss),
-‘libling’ (favorite), ‘magmatit’ (magnetite), ‘viszonvád’
-(counter-accusation). Participant A might say “no” to both barát and
-dolog (no actual participant did this). This means they rejected more
-than one word in bin 4. We check that this hasn’t happened in bins 1-3
-meaning that 4 is the earliest bin where they did this. This means that
-their vocabulary size is 4. Participant B might say “no” to magmatit and
-libling and glosszáz. We check that hasn’t happened in bins 1-43, where
-they only rejected one word per bin at most. This means that their
-vocabulary size is 44. What participant A does in bins 5-50 and what
-participant B does in bins 45-50 is not relevant for their vocabulary
-size. Note that participants see words in random order. Participant B
-might have responded to magmatit in trial 1, trial 250, or anywhere in
-between.
+responded to nonce words and real words. As described above, real words
+were distributed across pre-established familiarity bins (from 1, least
+familiar, to 50, most familiar). Based on participants’ yes and no
+responses, we identified the lowest familiarity bin in which the
+participant knew all real words except one.
+
+Here is an example. Bin 6, a relatively unfamiliar bin, has four real
+words: glosszáz ‘to gloss’, libling ‘favorite’, magmatit ‘magnetite’,
+viszonvád ‘counter-accusation’. Bin 47, a relatively familiar bin, has
+barát friend, dolog ‘thing’, törékeny ‘fragile’, karakter ‘character’.
+Participant A might say “no” to both barát and dolog (no actual
+participant did this). This means they rejected more than one word in
+bin 47. We check that this hasn’t happened in bins 48-50 meaning that 47
+is the highest bin where they did this. Participant B might say “no” to
+magmatit and libling and glosszáz. We check that hasn’t happened in bins
+7-50, where they only rejected one word per bin at most. Note that
+participants see words in random order. Participant B might have
+responded to magmatit in trial 1, trial 250, or anywhere in between.
+
+As a first approximation, this would mean that Participant A has a
+vocabulary size of 48 and Participant B, 7. We want a higher number to
+express a larger vocabulary size, so we subtract these numbers from 51
+to get the final vocabulary score: 2 for Participant A and 43 for
+Participant B. This way, vocabulary size mirrors word familiarity on a
+scale of 1-50.
 
 Vocabulary size correlates with age across participants, but
 imperfectly. Participants that know fewer words give fewer “yes”
@@ -325,6 +321,11 @@ Participant vocabulary size, age, and relative word familiarity together
 predict response time in correct responses to visual targets of existing
 words in our participant sample. The best model of our responses posits
 non-linear relationships between our predictors and response times.
+
+The correlation between age, vocabulary size, and education can be seen
+below.
+
+![](figures/ageeduvoc-1.png)
 
 The aggregated predicted effects of the three predictors can be seen
 below.
