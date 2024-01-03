@@ -299,6 +299,7 @@ There are three ways to visualize this three-way interaction. First, we plot pre
 p1 = plot_model(fit15, type = "pred", terms = c("participant_vocabulary_size","word_familiarity [20,30,40]","participant_age [14, 25, 70]")) +
   theme_bw() +
   scale_colour_viridis_d(option = 'viridis') +
+  scale_fill_viridis_d(option = 'viridis') +
   labs(colour = 'word familiarity') +
   xlab('participant vocabulary size (1-50)') +
   ylab('predicted response time (s)')
@@ -313,6 +314,7 @@ Second, we plot predicted response times across age and word familiarity for par
 p2 = plot_model(fit15, type = "pred", terms = c("participant_age","word_familiarity [20,30,40]","participant_vocabulary_size [15, 35, 47]")) +
   theme_bw() +
   scale_colour_viridis_d(option = 'viridis') +
+  scale_fill_viridis_d(option = 'viridis') +
   labs(colour = 'word familiarity (1-50)') +
   xlab('participant age (years)') +
   ylab('predicted response time (s)')
@@ -327,16 +329,32 @@ Third, we plot predicted response times across vocabulary size and age to words 
 p3 = plot_model(fit15, type = "pred", terms = c("participant_age","participant_vocabulary_size [15, 35, 47]","word_familiarity [20,30,40]")) +
   theme_bw() +
   scale_colour_viridis_d(option = 'rocket') +
+  scale_fill_viridis_d(option = 'rocket') +
   labs(colour = 'participant\nvocabulary size') +
   xlab('participant age (years)') +
   ylab('predicted response time (s)')
 p3
 ```
 
+Fourth, we also make a plot for word familiarity.
+
+
+```{r sjplot4, fig.width = 9.5, fig.height = 3}
+p4 = plot_model(fit15, type = "pred", terms = c("word_familiarity","participant_vocabulary_size [15, 35, 47]","participant_age [14, 25, 70]")) +
+  theme_bw() +
+  scale_colour_viridis_d(option = 'rocket') +
+  scale_fill_viridis_d(option = 'rocket') +
+  labs(colour = 'participant\nvocabulary size') +
+  xlab('word familiarity (1-50)') +
+  ylab('predicted response time (s)')
+p4
+```
+
+
 ```{r sjplots, eval=F}
-p1 + (p2 + theme(legend.position = 'none') + ggtitle('')) + (p3 + ggtitle('')) + plot_layout(ncol = 1, guides = 'collect') + plot_annotation(tag_levels = 'A')
-ggsave('figures/sjplots.png', width = 10, height = 10)
-ggsave('figures/sjplots.pdf', width = 10, height = 10)
+p1 + (p2 + theme(legend.position = 'none') + ggtitle('')) + (p3 + ggtitle('')) + (p4 + theme(legend.position = 'none') + ggtitle('')) + plot_layout(ncol = 1, guides = 'collect') + plot_annotation(tag_levels = 'A')
+ggsave('figures/sjplots.png', width = 10, height = 12)
+ggsave('figures/sjplots.pdf', width = 10, height = 12)
 ```
 
 This shows that age- and vocabulary size-related changes in response speed are largely independent of word familiarity, at least in its low-mid-to-high range.
