@@ -37,13 +37,17 @@ ids = old |>
 res1 = lm(s_size ~ s_age, data = ids)
 res2 = lm(s_size ~ s_edu, data = ids)
 res3 = lm(s_edu ~ s_age, data = ids)
+res4 = lm(s_age ~ s_edu, data = ids)
 
-old = ids |> 
+ids = ids |> 
   mutate(
     res_size_age = resid(res1),
     res_size_edu = resid(res2),
-    res_edu_age = resid(res3)
-  ) |> 
+    res_edu_age = resid(res3),
+    res_age_edu = resid(res4)
+  )
+
+ids |> 
   right_join(old)
 
 # tidi fun
@@ -77,6 +81,45 @@ d |>
   scale_x_continuous(breaks = seq(0,90,3)) +
   xlab('participant age') +
   ylab('participant vocabulary size')
+
+# -- models: vocab size -- #
+
+# fit01 = mgcv::gam(s_size ~ s(s_edu) + s(s_age), data = ids)
+# tidi(fit01)
+# plot(fit01)
+
+fit00 = mgcv::gam(s_size ~ s(s_edu) + s(s_age), data = ids)
+plot(fit00)
+fit01 = lm(s_size ~ 1 + s_edu + s_age, data = ids)
+fit02 = lm(s_size ~ 1 + s_edu + poly(s_age, 3, raw=TRUE), data = ids)
+fit03 = lm(s_size ~ 1 + poly(s_edu, 2, raw=TRUE) + s_age, data = ids)
+fit04 = lm(s_size ~ 1 + poly(s_edu, 2, raw=TRUE) + poly(s_age, 3, raw=TRUE), data = ids)
+fit05 = lm(s_size ~ 1 + poly(s_edu, 2, raw=TRUE) + poly(s_age, 2, raw=TRUE), data = ids)
+fit06 = lm(s_size ~ 1 + s_edu + poly(s_age, 2, raw=TRUE), data = ids)
+fit07 = lm(s_size ~ 1 + poly(s_edu, 3, raw=TRUE) + poly(s_age, 2, raw=TRUE), data = ids)
+compare_performance(fit01,fit02,fit03,fit04,fit05,fit06,fit07, metrics = 'common') |> arrange(-AIC,-BIC)
+tidi(fit06)
+tidi(fit02)
+anova(fit01,fit02)
+anova(fit01,fit06)
+
+fit08 = lm(s_size ~ 1 + s_age + res_edu_age, data = ids)
+fit09 = lm(s_size ~ 1 + s_edu + res_age_edu, data = ids)
+tidi(fit08)
+tidi(fit09)
+
+fit010 = mgcv::gam(s_edu ~ s(s_age), data = ids)
+plot(fit010)
+fit011 = lm(s_edu ~ s_age, data = ids)
+fit012 = lm(s_edu ~ poly(s_age,2, raw = TRUE), data = ids)
+fit013 = lm(s_edu ~ poly(s_age,3, raw = TRUE), data = ids)
+
+compare_performance(fit011,fit012,fit013, metrics = 'common')
+anova(fit011,fit013)
+anova(fit012,fit013)
+plot_model(fit013)
+plot_model(fit013, 'pred', terms = 's_age')
+# woovee zowee
 
 # -- models: young -- #
 
