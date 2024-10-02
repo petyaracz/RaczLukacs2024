@@ -34,12 +34,16 @@ tidi = function(model){
 
 # -- wrangle -- #
 
-# load all tidy
-all = read_tsv('tidy/d.tsv')
+# load all tidy, keep people w/ data
+all = read_tsv('tidy/d.tsv') |> 
+  filter(!is.na(age),!is.na(edu))
+
+# drop bad observations and participants
+filt = all |> 
+  filter(!drop_participant,!drop_observation,!is.na(age))
 
 # drop bad observations and participants, keep correct answers to real words, rescale
-d = all |> 
-  filter(!drop_participant,!drop_observation,!is.na(age)) |> 
+d = filt |> 
   filter(!nonce_word,correct) |> 
   mutate(
     participant_education = ifelse(as.double(edu) > 200, NA, as.double(edu)), # 200 is typo
@@ -70,5 +74,5 @@ idso = old |>
 # -- cleanup -- #
 
 rm(residualise) # don't need this no more
-rm(all)
-rm(d)
+# rm(all)
+# rm(d)
