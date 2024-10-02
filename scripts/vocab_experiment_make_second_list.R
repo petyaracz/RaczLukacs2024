@@ -81,6 +81,8 @@ real_words = filter(word_data, !nonce_word)
 nonce_words = filter(word_data, nonce_word) %>% 
   arrange(-correct_log_odds)
 
+write_tsv(real_words, 'tidy/full_real_word_set.tsv')
+
 # residuals
 
 fit1 = lm(correct_log_odds ~ bin, data = real_words)

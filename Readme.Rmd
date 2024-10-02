@@ -87,6 +87,29 @@ We ran two pilot experiments and a main experiment. The stimulus list for pilot 
 - drop_participant = missed_nonce_words > 20
 - drop_observation = resp.rt > 4
 
+## Stimulus info
+
+```{r stim0}
+full_set |> 
+  filter(
+    in_main
+    ) |>
+  summarise(
+    median_freq = median(fpm),
+    mean_freq = mean(fpm),
+    median_lfreq = median(lemma_fpm),
+    mean_lfreq = mean(lemma_fpm),
+    median_nchar = median(nchar),
+    mean_nchar = mean(nchar)
+  ) |> 
+  kable('simple', digits = 2)
+
+full_set |> 
+  filter(in_main) |> 
+  count(pos) |> 
+  kable('simple', digits = 2)
+```
+
 ## Counts
 
 ```{r counts1}
@@ -211,6 +234,21 @@ mor4 |>
 ## Plots in paper
 
 ```{r plot1, width = 6, height = 3}
+
+full_set |> 
+  mutate(
+    pos2 = str_extract(pos, '^.'),
+    in_main2 = ifelse(in_main, 'kept in main experiment', 'removed')
+      ) |> 
+  ggplot(aes(lfpm10r,correct_log_odds,label = pos2, colour = in_main2)) +
+  geom_text() +
+  theme_few() +
+  scale_colour_grey() +
+  xlab('log frequency per 10 million, scaled') +
+  ylab('log(yes/no), pilot experiment') +
+  labs(colour = 'target type')
+ggsave('figures/plot1-0.pdf', width = 9, height = 3)
+
 sums = d |> 
   summarise(mean = mean(resp.rt), .by = c(id_spec,participant_age,participant_vocabulary_size,participant_education))
 

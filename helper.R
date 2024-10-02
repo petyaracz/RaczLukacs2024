@@ -38,6 +38,10 @@ tidi = function(model){
 all = read_tsv('tidy/d.tsv') |> 
   filter(!is.na(age),!is.na(edu))
 
+# load all words
+full_set = read_tsv('tidy/full_real_word_set_info.tsv') |> 
+  mutate(in_main = word %in% all$word)
+
 # drop bad observations and participants
 filt = all |> 
   filter(!drop_participant,!drop_observation,!is.na(age))
