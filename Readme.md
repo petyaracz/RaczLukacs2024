@@ -76,19 +76,21 @@ Subsequent stimulus lists were based on results from pilot 1.
 - drop_participant = missed_nonce_words \> 20
 - drop_observation = resp.rt \> 4
 
+## Counts
+
 ``` r
 # n obs
-nrow(d)
+nrow(all)
 ```
 
-    ## [1] 71608
+    ## [1] 124250
 
 ``` r
 # n part
-length(unique(d$id_spec))
+length(unique(all$id_spec))
 ```
 
-    ## [1] 467
+    ## [1] 497
 
 ``` r
 # n filt obs
@@ -183,6 +185,41 @@ mor3 = lmer(resp.rt ~ 1 + s_edu + s_word + res_size_age * s_age + (1+s_word|id) 
 mor4 = lmer(resp.rt ~ 1 + s_age + s_word + res_size_edu * s_edu + (1+s_word|id) + (1|word), data = old, REML = F, control = lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=20000)))
 ```
 
+## Tables in paper
+
+| term        | estimate | std.error | statistic | conf.low | conf.high |
+|:------------|---------:|----------:|----------:|---------:|----------:|
+| (Intercept) |     2.58 |      0.10 |     25.42 |     2.38 |      2.78 |
+| s_age       |   -10.31 |      1.64 |     -6.29 |   -13.52 |     -7.09 |
+| s_word      |    -0.77 |      0.06 |    -12.94 |    -0.88 |     -0.65 |
+| s_size      |    -0.47 |      0.24 |     -1.95 |    -0.94 |      0.00 |
+
+| term        | estimate | std.error | statistic | conf.low | conf.high |
+|:------------|---------:|----------:|----------:|---------:|----------:|
+| (Intercept) |     2.10 |      0.07 |     29.74 |     1.97 |      2.24 |
+| s_age       |     0.87 |      0.06 |     15.08 |     0.75 |      0.98 |
+| s_edu       |    -0.70 |      0.10 |     -6.72 |    -0.90 |     -0.49 |
+| s_word      |    -0.81 |      0.04 |    -20.23 |    -0.88 |     -0.73 |
+| s_size      |    -0.66 |      0.09 |     -7.66 |    -0.83 |     -0.49 |
+
+| term               | estimate | std.error | statistic | conf.low | conf.high |
+|:-------------------|---------:|----------:|----------:|---------:|----------:|
+| (Intercept)        |     1.67 |      0.06 |     28.79 |     1.55 |      1.78 |
+| s_edu              |    -0.63 |      0.10 |     -6.50 |    -0.82 |     -0.44 |
+| s_word             |    -0.81 |      0.04 |    -20.22 |    -0.88 |     -0.73 |
+| res_size_age       |     0.26 |      0.14 |      1.82 |    -0.02 |      0.53 |
+| s_age              |     0.70 |      0.05 |     13.19 |     0.60 |      0.80 |
+| res_size_age:s_age |    -2.15 |      0.27 |     -7.93 |    -2.68 |     -1.62 |
+
+| term               | estimate | std.error | statistic | conf.low | conf.high |
+|:-------------------|---------:|----------:|----------:|---------:|----------:|
+| (Intercept)        |     1.76 |      0.06 |     29.39 |     1.64 |      1.88 |
+| s_age              |     0.85 |      0.06 |     14.94 |     0.74 |      0.97 |
+| s_word             |    -0.81 |      0.04 |    -20.23 |    -0.88 |     -0.73 |
+| res_size_edu       |    -1.48 |      0.30 |     -5.01 |    -2.06 |     -0.90 |
+| s_edu              |    -0.90 |      0.10 |     -8.96 |    -1.10 |     -0.70 |
+| res_size_edu:s_edu |     1.65 |      0.57 |      2.90 |     0.54 |      2.77 |
+
 ## Plots in paper
 
-![](figures/plot1-1.png)<!-- -->
+![](figures/plot1-1.png)<!-- -->![](figures/plot1-2.png)<!-- -->![](figures/plot1-3.png)<!-- -->![](figures/plot1-4.png)<!-- -->

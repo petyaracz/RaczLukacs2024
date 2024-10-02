@@ -87,6 +87,8 @@ We ran two pilot experiments and a main experiment. The stimulus list for pilot 
 - drop_participant = missed_nonce_words > 20
 - drop_observation = resp.rt > 4
 
+## Counts
+
 ```{r counts1, echo = T}
 # n obs
 nrow(all)
