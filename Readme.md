@@ -78,63 +78,24 @@ Subsequent stimulus lists were based on results from pilot 1.
 
 ## Counts
 
-``` r
-# n obs
-nrow(all)
-```
-
-    ## [1] 124250
-
-``` r
-# n part
-length(unique(all$id_spec))
-```
-
-    ## [1] 497
-
-``` r
-# n filt obs
-nrow(filt)
-```
-
-    ## [1] 113076
-
-``` r
-# n filt part
-length(unique(filt$id_spec))
-```
-
-    ## [1] 472
-
-``` r
-# filt counts
-filt |> 
-  count(nonce_word,correct) |> 
-  pivot_wider(names_from = nonce_word, values_from = n) |> 
-  rename('non word' = `TRUE`, 'real word' = `FALSE`) |> 
-  mutate(response = ifelse(correct, 'yes', 'no')) |> 
-  select(response,`real word`,`non word`) |> 
-  kable('simple')
-```
+| counts                       |      n |
+|:-----------------------------|-------:|
+| participants                 |    497 |
+| observations                 | 124250 |
+| participants, filtered       |    472 |
+| observations, filtered       | 113076 |
+| young participants, filtered |     80 |
+| old participants, filtered   |    387 |
 
 | response | real word | non word |
 |:---------|----------:|---------:|
 | no       |     18016 |     1977 |
 | yes      |     72365 |    20718 |
 
-``` r
-# young
-nrow(idsy)
-```
+    ## [1] "distribution of total response duration per participant:"
 
-    ## [1] 80
-
-``` r
-# old
-nrow(idso)
-```
-
-    ## [1] 387
+    ##       0%      25%      50%      75%     100% 
+    ## 1.343503 2.352229 2.671501 3.074218 5.917920
 
 ## Model comparison
 

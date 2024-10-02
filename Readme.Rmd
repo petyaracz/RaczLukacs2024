@@ -89,15 +89,27 @@ We ran two pilot experiments and a main experiment. The stimulus list for pilot 
 
 ## Counts
 
-```{r counts1, echo = T}
+```{r counts1}
 # n obs
-nrow(all)
+n_obs = nrow(all)
 # n part
-length(unique(all$id_spec))
+n_part = length(unique(all$id_spec))
 # n filt obs
-nrow(filt)
+n_filt_obs = nrow(filt)
 # n filt part
-length(unique(filt$id_spec))
+n_filt_part = length(unique(filt$id_spec))
+# young
+n_y = nrow(idsy)
+# old
+n_o = nrow(idso)
+
+# sum
+tibble(
+  counts = c('participants', 'observations', 'participants, filtered', 'observations, filtered', 'young participants, filtered', 'old participants, filtered'),
+  n = c(n_part,n_obs,n_filt_part,n_filt_obs,n_y,n_o)
+) |> 
+  kable('simple')
+
 # filt counts
 filt |> 
   count(nonce_word,correct) |> 
@@ -106,10 +118,13 @@ filt |>
   mutate(response = ifelse(correct, 'yes', 'no')) |> 
   select(response,`real word`,`non word`) |> 
   kable('simple')
-# young
-nrow(idsy)
-# old
-nrow(idso)
+
+print('distribution of total response duration per participant:')
+d |> 
+  summarise(duration = sum(resp.rt)/60, .by = id_spec) |> 
+  pull(duration) |> 
+  quantile()
+
 ```
 
 ## Model comparison
