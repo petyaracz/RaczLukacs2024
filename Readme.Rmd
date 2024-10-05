@@ -20,6 +20,7 @@ library(patchwork)
 library(sjPlot)
 library(broom.mixed)
 library(lme4)
+library(psych)
 
 source('helper.R')
 
@@ -147,6 +148,20 @@ d |>
   summarise(duration = sum(resp.rt)/60, .by = id_spec) |> 
   pull(duration) |> 
   quantile()
+
+```
+
+## Factor analysis of age x vocabulary x education
+
+```{r factora}
+vars = idso |> 
+  distinct(s_age,s_size,s_edu)
+
+fa = fa(r = vars, 
+   nfactors = 2, 
+   rotate = "varimax") 
+
+fa
 
 ```
 
@@ -291,22 +306,22 @@ p3 = sums |>
 p1 + p2 + p3
 ggsave('figures/plot1-2.pdf', width = 8, height = 3)
 
-plot_model(mor3, 'pred', terms = c('s_age','res_size_age')) +
-  scale_fill_viridis_d() +
-  scale_colour_viridis_d() +
+plot_model(mor3, 'pred', terms = c('s_age','res_size_age [-.16,0,.16]')) +
+  scale_fill_viridis_d(labels = c(-8,0,8)) +
+  scale_colour_viridis_d(labels = c(-8,0,8)) +
   theme_bw() +
   labs(colour = 'residual\nvocabulary\nsize') +
-  xlab('participant age (scaled)') +
+  scale_x_continuous(name = 'participant age', breaks = c(.25,.5,.75,1), labels = c(20,40,60,80)) + # I checked!
   ylab('response time (s)') +
   ggtitle('')
 ggsave('figures/plot1-3.pdf', width = 5, height = 3)
 
-plot_model(mor4, 'pred', terms = c('s_edu','res_size_edu')) +
-  scale_fill_viridis_d(option = 'H') +
-  scale_colour_viridis_d(option = 'H') +
+plot_model(mor4, 'pred', terms = c('s_edu','res_size_edu [-.16,0,.16]')) +
+  scale_fill_viridis_d(option = 'H', labels = c(-8,0,8)) +
+  scale_colour_viridis_d(option = 'H', labels = c(-8,0,8)) +
   theme_bw() +
   labs(colour = 'residual\nvocabulary\nsize') +
-  xlab('participant education (scaled)') +
+  scale_x_continuous(name = 'participant education', breaks = c(.25,.5,.75,1), labels = c(10,15,20,25)) + # I checked too!
   ylab('response time (s)') +
   ggtitle('')
 ggsave('figures/plot1-4.pdf', width = 5, height = 3)

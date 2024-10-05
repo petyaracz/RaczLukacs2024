@@ -2,7 +2,7 @@ Supplementary Information: Older participants are slower in a visual
 lexical decision task, but this is attenuated by a large vocabulary
 ================
 Rácz, Péter
-2 October, 2024
+5 October, 2024
 
 ## Links
 
@@ -76,6 +76,18 @@ Subsequent stimulus lists were based on results from pilot 1.
 - drop_participant = missed_nonce_words \> 20
 - drop_observation = resp.rt \> 4
 
+## Stimulus info
+
+| median_freq | mean_freq | median_lfreq | mean_lfreq | median_nchar | mean_nchar |
+|------------:|----------:|-------------:|-----------:|-------------:|-----------:|
+|        0.33 |     11.94 |         0.79 |      38.04 |            7 |       7.06 |
+
+| pos       |   n |
+|:----------|----:|
+| adjective |  31 |
+| noun      | 118 |
+| verb      |  51 |
+
 ## Counts
 
 | counts                       |      n |
@@ -96,6 +108,43 @@ Subsequent stimulus lists were based on results from pilot 1.
 
     ##       0%      25%      50%      75%     100% 
     ## 1.343503 2.352229 2.671501 3.074218 5.917920
+
+## Factor analysis of age x vocabulary x education
+
+    ## Factor Analysis using method =  minres
+    ## Call: fa(r = vars, nfactors = 2, rotate = "varimax")
+    ## Standardized loadings (pattern matrix) based upon correlation matrix
+    ##         MR1  MR2   h2   u2 com
+    ## s_age  0.10 0.38 0.15 0.85 1.2
+    ## s_size 0.52 0.46 0.48 0.52 2.0
+    ## s_edu  0.51 0.12 0.27 0.73 1.1
+    ## 
+    ##                        MR1  MR2
+    ## SS loadings           0.54 0.37
+    ## Proportion Var        0.18 0.12
+    ## Cumulative Var        0.18 0.30
+    ## Proportion Explained  0.59 0.41
+    ## Cumulative Proportion 0.59 1.00
+    ## 
+    ## Mean item complexity =  1.4
+    ## Test of the hypothesis that 2 factors are sufficient.
+    ## 
+    ## df null model =  3  with the objective function =  0.16 with Chi Square =  51.96
+    ## df of  the model are -2  and the objective function was  0 
+    ## 
+    ## The root mean square of the residuals (RMSR) is  0 
+    ## The df corrected root mean square of the residuals is  NA 
+    ## 
+    ## The harmonic n.obs is  326 with the empirical chi square  0  with prob <  NA 
+    ## The total n.obs was  326  with Likelihood Chi Square =  0  with prob <  NA 
+    ## 
+    ## Tucker Lewis Index of factoring reliability =  1.062
+    ## Fit based upon off diagonal values = 1
+    ## Measures of factor score adequacy             
+    ##                                                     MR1   MR2
+    ## Correlation of (regression) scores with factors    0.63  0.54
+    ## Multiple R square of scores with factors           0.40  0.29
+    ## Minimum correlation of possible factor scores     -0.20 -0.42
 
 ## Model comparison
 
@@ -183,4 +232,4 @@ mor4 = lmer(resp.rt ~ 1 + s_age + s_word + res_size_edu * s_edu + (1+s_word|id) 
 
 ## Plots in paper
 
-![](figures/plot1-1.png)<!-- -->![](figures/plot1-2.png)<!-- -->![](figures/plot1-3.png)<!-- -->![](figures/plot1-4.png)<!-- -->
+![](figures/plot1-1.png)<!-- -->![](figures/plot1-2.png)<!-- -->![](figures/plot1-3.png)<!-- -->![](figures/plot1-4.png)<!-- -->![](figures/plot1-5.png)<!-- -->
