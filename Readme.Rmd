@@ -151,11 +151,24 @@ d |>
 
 ```
 
-## Factor analysis of age x vocabulary x education
+## GAM and Factor analysis of age x vocabulary x education
 
-```{r factora}
+```{r gam}
 vars = idso |> 
   distinct(s_age,s_size,s_edu)
+
+gam1 = mgcv::gam(s_size ~ s(s_age), data = vars, method = 'ML')
+gam2 = mgcv::gam(s_size ~ s_age, data = vars, method = 'ML')
+gam3 = mgcv::gam(s_size ~ s(s_edu), data = vars, method = 'ML')
+gam4 = mgcv::gam(s_size ~ s_edu, data = vars, method = 'ML')
+gam5 = mgcv::gam(s_age ~ s(s_edu), data = vars, method = 'ML')
+gam6 = mgcv::gam(s_age ~ s_edu, data = vars, method = 'ML')
+# itsadug::compareML(gam1,gam2) # 1 better p < 0.05
+# itsadug::compareML(gam3,gam4) # linear better
+# itsadug::compareML(gam5,gam6) # 5 better p < 0.05
+```
+
+```{r factora}
 
 fa = fa(r = vars, 
    nfactors = 2, 
