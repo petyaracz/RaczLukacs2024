@@ -122,6 +122,11 @@ n_part = length(unique(all$id_spec))
 n_filt_obs = nrow(filt)
 # n filt part
 n_filt_part = length(unique(filt$id_spec))
+# n men
+n_m = filt |> 
+  distinct(id_spec,gender) |> 
+  filter(gender == 'm') |> 
+  nrow()
 # young
 n_y = nrow(idsy)
 # old
@@ -273,7 +278,7 @@ full_set |>
   theme_few() +
   scale_colour_grey() +
   xlab('log frequency per 10 million, scaled') +
-  ylab('log(yes/no), pilot experiment') +
+  ylab('log(yes/no), baseline experiment') +
   labs(colour = 'target type')
 ggsave('figures/plot1-0.pdf', width = 9, height = 3)
 
