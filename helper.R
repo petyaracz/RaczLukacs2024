@@ -52,20 +52,30 @@ d = filt |>
   mutate(
     participant_education = ifelse(as.double(edu) > 200, NA, as.double(edu)), # 200 is typo
     participant_education = ifelse(is.na(participant_education) & participant_age < 18, participant_age - 6, participant_education), # some na-s can be inferred. some not.
+    s_word = scales::rescale(word_familiarity),
     s_age = scales::rescale(participant_age),
     s_edu = scales::rescale(participant_education),
-    s_size = scales::rescale(participant_vocabulary_size),
-    s_word = scales::rescale(word_familiarity)
+    s_size = scales::rescale(participant_vocabulary_size)
   ) |> 
   filter(!is.na(participant_education)) # :(
 
 # split
 young = d |> 
   filter(participant_age < 18) |> 
+  mutate(
+    s_age = scales::rescale(participant_age),
+    # s_edu = scales::rescale(participant_education),
+    s_size = scales::rescale(participant_vocabulary_size)
+         ) |> 
   residualise()
 
 old = d |> 
   filter(participant_age >= 18, !is.na(participant_education)) |> 
+  mutate(
+    s_age = scales::rescale(participant_age),
+    s_edu = scales::rescale(participant_education),
+    s_size = scales::rescale(participant_vocabulary_size)
+  ) |> 
   residualise()
 
 # summaries

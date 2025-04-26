@@ -2,7 +2,7 @@ Supplementary Information: Older participants are slower in a visual
 lexical decision task, but this is attenuated by a large vocabulary
 ================
 Rácz, Péter
-5 October, 2024
+26 April, 2025
 
 ## Links
 
@@ -109,7 +109,7 @@ Subsequent stimulus lists were based on results from pilot 1.
     ##       0%      25%      50%      75%     100% 
     ## 1.343503 2.352229 2.671501 3.074218 5.917920
 
-## Factor analysis of age x vocabulary x education
+## GAM and Factor analysis of age x vocabulary x education
 
     ## Factor Analysis using method =  minres
     ## Call: fa(r = vars, nfactors = 2, rotate = "varimax")
@@ -173,7 +173,7 @@ mys1 = lmer(resp.rt ~ 1 + s_age + s_word + s_size + (1+s_word|id) + (1|word), da
 myr1 = lmer(resp.rt ~ 1 + s_age + res_size_age + s_word + (1+s_word|id) + (1|word), data = young, REML = F, control = lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=20000)))
 ```
 
-Young data: - Vocabulary: Is the vocabulary x age relationship linear or
+Old data: - Vocabulary: Is the vocabulary x age relationship linear or
 polynomial? - Main: RT ~ part age, vocab size, education, word
 familiarity - Resid Vocab/Age: RT ~ part edu, age, variation in vocab
 size not explained by age (residualised vocabulary size), word
@@ -195,41 +195,76 @@ mor3 = lmer(resp.rt ~ 1 + s_edu + s_word + res_size_age * s_age + (1+s_word|id) 
 mor4 = lmer(resp.rt ~ 1 + s_age + s_word + res_size_edu * s_edu + (1+s_word|id) + (1|word), data = old, REML = F, control = lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=20000)))
 ```
 
+Combined data:
+
+- Old and young data together
+- We know that the age effect is non-linear. We try 2nd, 3rd, 4th order
+  polynomials
+- We also try these for vocabulary size. This is a lot of comparisons
+  and we don’t take the results extremely very seriously.
+
+``` r
+comb5 = lmer(resp.rt ~ poly(s_age, 3, raw = TRUE) + poly(s_size, 2, raw = TRUE) + s_word + (1+s_word|id), data = d) # I choose you
+```
+
 ## Tables in paper
+
+| age_group |   n |
+|:----------|----:|
+| 9-14      |  47 |
+| 14-19     |  47 |
+| 19-20     |  47 |
+| 20-21     |  47 |
+| 21-23     |  47 |
+| 23-26     |  47 |
+| 26-35     |  47 |
+| 35-47     |  46 |
+| 47-61     |  46 |
+| 61-90     |  46 |
 
 | term        | estimate | std.error | statistic | conf.low | conf.high |
 |:------------|---------:|----------:|----------:|---------:|----------:|
 | (Intercept) |     2.58 |      0.10 |     25.42 |     2.38 |      2.78 |
-| s_age       |   -10.31 |      1.64 |     -6.29 |   -13.52 |     -7.09 |
+| s_age       |    -1.02 |      0.16 |     -6.29 |    -1.34 |     -0.70 |
 | s_word      |    -0.77 |      0.06 |    -12.94 |    -0.88 |     -0.65 |
-| s_size      |    -0.47 |      0.24 |     -1.95 |    -0.94 |      0.00 |
+| s_size      |    -0.37 |      0.19 |     -1.95 |    -0.75 |      0.00 |
 
 | term        | estimate | std.error | statistic | conf.low | conf.high |
 |:------------|---------:|----------:|----------:|---------:|----------:|
-| (Intercept) |     2.10 |      0.07 |     29.74 |     1.97 |      2.24 |
-| s_age       |     0.87 |      0.06 |     15.08 |     0.75 |      0.98 |
-| s_edu       |    -0.70 |      0.10 |     -6.72 |    -0.90 |     -0.49 |
+| (Intercept) |     2.08 |      0.06 |     32.50 |     1.96 |      2.21 |
+| s_age       |     0.77 |      0.05 |     15.08 |     0.67 |      0.87 |
+| s_edu       |    -0.58 |      0.09 |     -6.72 |    -0.75 |     -0.41 |
 | s_word      |    -0.81 |      0.04 |    -20.23 |    -0.88 |     -0.73 |
 | s_size      |    -0.66 |      0.09 |     -7.66 |    -0.83 |     -0.49 |
 
 | term               | estimate | std.error | statistic | conf.low | conf.high |
 |:-------------------|---------:|----------:|----------:|---------:|----------:|
-| (Intercept)        |     1.67 |      0.06 |     28.79 |     1.55 |      1.78 |
-| s_edu              |    -0.63 |      0.10 |     -6.50 |    -0.82 |     -0.44 |
+| (Intercept)        |     1.64 |      0.04 |     36.85 |     1.55 |      1.73 |
+| s_edu              |    -0.52 |      0.08 |     -6.50 |    -0.68 |     -0.37 |
 | s_word             |    -0.81 |      0.04 |    -20.22 |    -0.88 |     -0.73 |
-| res_size_age       |     0.26 |      0.14 |      1.82 |    -0.02 |      0.53 |
-| s_age              |     0.70 |      0.05 |     13.19 |     0.60 |      0.80 |
-| res_size_age:s_age |    -2.15 |      0.27 |     -7.93 |    -2.68 |     -1.62 |
+| res_size_age       |     0.02 |      0.12 |      0.14 |    -0.21 |      0.25 |
+| s_age              |     0.62 |      0.05 |     13.19 |     0.53 |      0.71 |
+| res_size_age:s_age |    -1.91 |      0.24 |     -7.93 |    -2.38 |     -1.44 |
 
 | term               | estimate | std.error | statistic | conf.low | conf.high |
 |:-------------------|---------:|----------:|----------:|---------:|----------:|
-| (Intercept)        |     1.76 |      0.06 |     29.39 |     1.64 |      1.88 |
-| s_age              |     0.85 |      0.06 |     14.94 |     0.74 |      0.97 |
+| (Intercept)        |     1.71 |      0.05 |     37.23 |     1.62 |      1.80 |
+| s_age              |     0.76 |      0.05 |     14.94 |     0.66 |      0.86 |
 | s_word             |    -0.81 |      0.04 |    -20.23 |    -0.88 |     -0.73 |
-| res_size_edu       |    -1.48 |      0.30 |     -5.01 |    -2.06 |     -0.90 |
-| s_edu              |    -0.90 |      0.10 |     -8.96 |    -1.10 |     -0.70 |
-| res_size_edu:s_edu |     1.65 |      0.57 |      2.90 |     0.54 |      2.77 |
+| res_size_edu       |    -1.20 |      0.21 |     -5.84 |    -1.61 |     -0.80 |
+| s_edu              |    -0.75 |      0.08 |     -8.96 |    -0.91 |     -0.59 |
+| res_size_edu:s_edu |     1.38 |      0.48 |      2.90 |     0.45 |      2.31 |
+
+| term                         | estimate | std.error | statistic | conf.low | conf.high |
+|:-----------------------------|---------:|----------:|----------:|---------:|----------:|
+| (Intercept)                  |     2.53 |      0.08 |     30.74 |     2.37 |      2.69 |
+| poly(s_age, 3, raw = TRUE)1  |    -3.45 |      0.51 |     -6.73 |    -4.45 |     -2.44 |
+| poly(s_age, 3, raw = TRUE)2  |     7.62 |      1.29 |      5.90 |     5.09 |     10.15 |
+| poly(s_age, 3, raw = TRUE)3  |    -3.74 |      0.93 |     -4.02 |    -5.57 |     -1.92 |
+| poly(s_size, 2, raw = TRUE)1 |    -1.58 |      0.30 |     -5.32 |    -2.17 |     -1.00 |
+| poly(s_size, 2, raw = TRUE)2 |     0.72 |      0.25 |      2.88 |     0.23 |      1.22 |
+| s_word                       |    -0.74 |      0.01 |    -54.86 |    -0.76 |     -0.71 |
 
 ## Plots in paper
 
-![](figures/plot1-1.png)<!-- -->![](figures/plot1-2.png)<!-- -->![](figures/plot1-3.png)<!-- -->![](figures/plot1-4.png)<!-- -->![](figures/plot1-5.png)<!-- -->
+![](figures/plot1-1.png)<!-- -->![](figures/plot1-2.png)<!-- -->![](figures/plot1-3.png)<!-- -->![](figures/plot1-4.png)<!-- -->![](figures/plot1-5.png)<!-- -->![](figures/plot1-6.png)<!-- -->![](figures/plot1-7.png)<!-- -->![](figures/plot1-8.png)<!-- -->

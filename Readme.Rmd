@@ -205,7 +205,7 @@ mys1 = lmer(resp.rt ~ 1 + s_age + s_word + s_size + (1+s_word|id) + (1|word), da
 myr1 = lmer(resp.rt ~ 1 + s_age + res_size_age + s_word + (1+s_word|id) + (1|word), data = young, REML = F, control = lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=20000)))
 ```
 
-Young data:
+Old data:
 - Vocabulary: Is the vocabulary x age relationship linear or polynomial?
 - Main: RT ~ part age, vocab size, education, word familiarity
 - Resid Vocab/Age: RT ~ part edu, age, variation in vocab size not explained by age (residualised vocabulary size), word familiarity
@@ -225,42 +225,70 @@ mor3 = lmer(resp.rt ~ 1 + s_edu + s_word + res_size_age * s_age + (1+s_word|id) 
 mor4 = lmer(resp.rt ~ 1 + s_age + s_word + res_size_edu * s_edu + (1+s_word|id) + (1|word), data = old, REML = F, control = lmerControl(optimizer="bobyqa", optCtrl=list(maxfun=20000)))
 ```  
 
+Combined data:
+
+- Old and young data together
+- We know that the age effect is non-linear. We try 2nd, 3rd, 4th order polynomials
+- We also try these for vocabulary size. This is a lot of comparisons and we don't take the results extremely very seriously.
+
+```{r models3, echo = T}
+
+comb5 = lmer(resp.rt ~ poly(s_age, 3, raw = TRUE) + poly(s_size, 2, raw = TRUE) + s_word + (1+s_word|id), data = d) # I choose you
+
+```
+
 ## Tables in paper
 
 ```{r tables1}
+
+d |> 
+  distinct(id,participant_age) |> 
+  mutate(ntile = ntile(participant_age,10)) |> 
+  summarise(
+    min = min(participant_age),
+    max = max(participant_age),
+    n = n(),
+    .by = ntile
+  ) |> 
+  arrange(ntile) |> 
+  mutate(age_group = glue('{min}-{max}')) |> 
+  select(age_group,n) |> 
+  # kable('latex', digits = 2)
+  kable('simple', digits = 2)
+
 mys1 |> 
   tidy(conf.int = T) |>
   filter(effect == 'fixed') |> 
   select(term,estimate,std.error,statistic,conf.low,conf.high) |> 
-  # kable('latex', digits = 2)
+  # kable('latex', digits = 2, booktabs = T)
   kable('simple', digits = 2)
-# 
-# myr1 |> 
-#   tidy(conf.int = T) |>
-#   filter(effect == 'fixed') |> 
-#   select(term,estimate,std.error,statistic,conf.low,conf.high) |> 
-#   # kable('latex', digits = 2)
-#   kable('simple', digits = 2)
 
 mos1 |> 
   tidy(conf.int = T) |>
   filter(effect == 'fixed') |>
   select(term,estimate,std.error,statistic,conf.low,conf.high) |>
-  # kable('latex', digits = 2)
+  # kable('latex', digits = 2, booktabs = T)
   kable('simple', digits = 2)
 
 mor3 |> 
   tidy(conf.int = T) |>
   filter(effect == 'fixed') |>
   select(term,estimate,std.error,statistic,conf.low,conf.high) |>
-  # kable('latex', digits = 2)
+  # kable('latex', digits = 2, booktabs = T)
   kable('simple', digits = 2)
 
 mor4 |> 
   tidy(conf.int = T) |>
   filter(effect == 'fixed') |>
   select(term,estimate,std.error,statistic,conf.low,conf.high) |>
-  # kable('latex', digits = 2)
+  # kable('latex', digits = 2, booktabs = T)
+  kable('simple', digits = 2)
+
+comb5 |> 
+  tidy(conf.int = T) |>
+  filter(effect == 'fixed') |>
+  select(term,estimate,std.error,statistic,conf.low,conf.high) |>
+  # kable('latex', digits = 2, booktabs = T)
   kable('simple', digits = 2)
 ```
 
@@ -324,24 +352,89 @@ p3 = sums |>
 p1 + p2 + p3
 ggsave('figures/plot1-2.pdf', width = 8, height = 3)
 
-plot_model(mor3, 'pred', terms = c('s_age','res_size_age [-.16,0,.16]')) +
-  scale_fill_viridis_d(labels = c(-8,0,8)) +
-  scale_colour_viridis_d(labels = c(-8,0,8)) +
+p4 = plot_model(mys1, 'pred', terms = 's_age') +
   theme_bw() +
-  labs(colour = 'residual\nvocabulary\nsize') +
-  scale_x_continuous(name = 'participant age', breaks = c(.25,.5,.75,1), labels = c(20,40,60,80)) + # I checked!
+  scale_x_continuous(name = 'participant\nage', breaks = c(0,.25,.5,.75,1), labels = c(9,10,13.5,14,17)) + # I checked!
+  ylim(.5,2) +
   ylab('response time (s)') +
   ggtitle('')
+
+p5 = plot_model(mys1, 'pred', terms = 's_size') +
+  theme_bw() +
+  scale_x_continuous(name = 'participant\nvocabulary size', breaks = c(0,.25,.5,.75,1), labels = c(1,19,26.5,28,40)) + # I checked!
+  ylim(.5,2) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  ggtitle('')
+
+p6 = plot_model(mys1, 'pred', terms = 's_word') +
+  theme_bw() +
+  scale_x_continuous(name = 'word familiarity', breaks = c(0,.25,.5,.75,1), labels = c(0, 24, 50,75, 1)) + # duh
+  ylim(.5,2) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  ggtitle('')
+
+p4 + p5 + p6
 ggsave('figures/plot1-3.pdf', width = 5, height = 3)
 
-plot_model(mor4, 'pred', terms = c('s_edu','res_size_edu [-.16,0,.16]')) +
-  scale_fill_viridis_d(option = 'H', labels = c(-8,0,8)) +
-  scale_colour_viridis_d(option = 'H', labels = c(-8,0,8)) +
+p7 = plot_model(mos1, 'pred', terms = 's_age') +
   theme_bw() +
-  labs(colour = 'residual\nvocabulary\nsize') +
-  scale_x_continuous(name = 'participant education', breaks = c(.25,.5,.75,1), labels = c(10,15,20,25)) + # I checked too!
+  scale_x_continuous(name = 'participant\nage', breaks = c(0,.25,.5,.75,1), labels = c(18,21,25,45.5,90)) + # I checked!
+  ylim(.5,2) +
   ylab('response time (s)') +
   ggtitle('')
-ggsave('figures/plot1-4.pdf', width = 5, height = 3)
+
+p8 = plot_model(mos1, 'pred', terms = 's_size') +
+  theme_bw() +
+  scale_x_continuous(name = 'participant\nvocabulary size', breaks = c(0,.25,.5,.75,1), labels = c(1,31,35,40,50)) + # I checked!
+  ylim(.5,2) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  ggtitle('')
+
+p9 = plot_model(mos1, 'pred', terms = 's_edu') +
+  theme_bw() +
+  scale_x_continuous(name = 'participant\nyears in\neducation', breaks = c(0,.25,.5,.75,1), labels = c(7, 13.5,15,17,27)) + 
+  ylim(.5,2) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  ggtitle('')
+
+p10 = plot_model(mos1, 'pred', terms = 's_word') +
+  theme_bw() +
+  scale_x_continuous(name = 'word familiarity', breaks = c(0,.25,.5,.75,1), labels = c(0, 24, 50,75, 1)) + # duh
+  ylim(.5,2) +
+  theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
+  ggtitle('')
+
+(p7 | p8 | p9 | p10)
+ggsave('figures/plot1-4.pdf', width = 6, height = 3)
+
+plot_model(mor3, 'pred', terms = c('s_age','res_size_age')) +
+  scale_fill_viridis_d(labels = c('Q1', 'Q2', 'Q3')) +
+  scale_colour_viridis_d(labels = c('Q1', 'Q2', 'Q3')) +
+  theme_bw() +
+  labs(colour = 'residual\nvocabulary\nsize') +
+  scale_x_continuous(name = 'participant\nage', breaks = c(0,.25,.5,.75,1), labels = c(18,21,25,45.5,90)) + # I checked!
+  ylab('response time (s)') +
+  ggtitle('')
+ggsave('figures/plot1-5.pdf', width = 5, height = 3)
+
+plot_model(mor4, 'pred', terms = c('s_edu','res_size_edu')) +
+  scale_fill_viridis_d(labels = c('Q1', 'Q2', 'Q3')) +
+  scale_colour_viridis_d(labels = c('Q1', 'Q2', 'Q3')) +
+  theme_bw() +
+  labs(colour = 'residual\nvocabulary\nsize') +
+  scale_x_continuous(name = 'participant\nyears in\neducation', breaks = c(0,.25,.5,.75,1), labels = c(7, 13.5,15,17,27)) + 
+  ylab('response time (s)') +
+  ggtitle('')
+ggsave('figures/plot1-6.pdf', width = 5, height = 3)
+
+plot_model(comb5, 'pred', terms = c('s_age [all]','s_size [.4, .6, .8]')) +
+  scale_colour_colorblind(labels = c('31','36','40')) + # checked
+  scale_fill_colorblind() +
+  theme_bw() +
+  labs(colour = 'vocabulary\nsize') +
+  scale_x_continuous(name = 'participant age', breaks = c(0,.25,.5,.75,1), labels = c(9,20,23,40,90)) +
+  ylab('response time (s)') +
+  ggtitle('')
+ggsave('figures/plot1-7.pdf', width = 5, height = 3)
 
 ```

@@ -129,3 +129,23 @@ compare_performance(mor1,mor3,mor4, metrics = 'common')
 anova(mor1,mor3)
 anova(mor1,mor4)
 # mor3, mor4
+
+# -- both! -- #
+
+comb1 = lmer(resp.rt ~ s_age + s_size + s_word + (1+s_word|id), data = d)
+comb2 = lmer(resp.rt ~ poly(s_age, 2, raw = TRUE) + s_size + s_word + (1+s_word|id), data = d)
+comb3 = lmer(resp.rt ~ s_age + poly(s_size, 2, raw = TRUE) + s_word + (1+s_word|id), data = d)
+comb4 = lmer(resp.rt ~ poly(s_age, 2, raw = TRUE) + poly(s_size, 2, raw = TRUE) + s_word + (1+s_word|id), data = d)
+comb5 = lmer(resp.rt ~ poly(s_age, 3, raw = TRUE) + poly(s_size, 2, raw = TRUE) + s_word + (1+s_word|id), data = d)
+comb6 = lmer(resp.rt ~ poly(s_age, 4, raw = TRUE) + poly(s_size, 2, raw = TRUE) + s_word + (1+s_word|id), data = d)
+comb7 = lmer(resp.rt ~ poly(s_age, 4, raw = TRUE) + poly(s_size, 3, raw = TRUE) + s_word + (1+s_word|id), data = d)
+comb8 = lmer(resp.rt ~ poly(s_age, 4, raw = TRUE) + poly(s_size, 4, raw = TRUE) + s_word + (1+s_word|id), data = d)
+
+plot(compare_performance(comb1,comb2,comb3,comb4,comb5,comb6,comb7,comb8, metrics = 'common'))
+anova(comb5,comb7)
+anova(comb7,comb6)
+anova(comb5,comb6) # comb5
+anova(comb7,comb8)
+
+
+plot_model(comb7, 'pred', terms = c('s_size [all]','s_age'))
