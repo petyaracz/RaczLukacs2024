@@ -1,8 +1,8 @@
-Supplementary Information: Older participants are slower in a visual
-lexical decision task, but this is attenuated by a large vocabulary
+The effect of age, education, and vocabulary size on the speed of word
+recognition across the lifespan
 ================
 Rácz, Péter
-26 April, 2025
+12 May, 2025
 
 ## Links
 
