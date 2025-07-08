@@ -4,6 +4,9 @@ recognition across the lifespan
 Rácz, Péter
 8 July, 2025
 
+[![DOI](https://zenodo.org/badge/702155876.svg)](https://doi.org/10.5281/zenodo.15835707)
+
+
 ## Links
 
 The code to run the experiments on Gitlab for pilot 1, pilot 2, and the
