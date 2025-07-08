@@ -320,8 +320,8 @@ sums |>
   theme_bw() +
   geom_vline(xintercept = 18, lty = 3) +
   ylim(0,3.2) +
-  xlab('participant age (years)') +
-  ylab('participant mean RT') + 
+  xlab("participant's age (years)") +
+  ylab("participant's mean RT") + 
   annotate("text", x = 30, y = 2.2, label = "← 18 years")
 ggsave('figures/plot1-1.pdf', width = 6, height = 3)
 
@@ -330,45 +330,45 @@ p1 = sums |>
   geom_point() +
   geom_smooth(method = 'gam') +
   theme_bw() +
-  xlab('participant age (years)') +
-  ylab('participant vocabulary size (1-50)')
+  xlab("participant's age (years)") +
+  ylab("participant's vocabulary size (1-50)")
 
 p2 = sums |> 
   ggplot(aes(participant_age,participant_education)) +
   geom_point() +
   geom_smooth(method = 'gam') +
   theme_bw() +
-  xlab('participant age (years)') +
-  ylab('participant years spent in education')
+  xlab("participant's age (years)") +
+  ylab("participant's years spent in education")
 
 p3 = sums |> 
   ggplot(aes(participant_education,participant_vocabulary_size)) +
   geom_point() +
   geom_smooth(method = 'gam') +
   theme_bw() +
-  xlab('participant years\nspent in education') +
-  ylab('participant vocabulary size (1-50)')
+  xlab("participant's years\nspent in education") +
+  ylab("participant's vocabulary size (1-50)")
 
 p1 + p2 + p3
 ggsave('figures/plot1-2.pdf', width = 8, height = 3)
 
 p4 = plot_model(mys1, 'pred', terms = 's_age') +
   theme_bw() +
-  scale_x_continuous(name = 'participant\nage', breaks = c(0,.25,.5,.75,1), labels = c(9,10,13.5,14,17)) + # I checked!
+  scale_x_continuous(name = "participant's\nage", breaks = c(0,.25,.5,.75,1), labels = c(9,10,13.5,14,17)) + # I checked!
   ylim(.5,2) +
   ylab('response time (s)') +
   ggtitle('')
 
 p5 = plot_model(mys1, 'pred', terms = 's_size') +
   theme_bw() +
-  scale_x_continuous(name = 'participant\nvocabulary size', breaks = c(0,.25,.5,.75,1), labels = c(1,19,26.5,28,40)) + # I checked!
+  scale_x_continuous(name = "participant's\nvocabulary size", breaks = c(0,.25,.5,.75,1), labels = c(1,19,26.5,28,40)) + # I checked!
   ylim(.5,2) +
   theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
   ggtitle('')
 
 p6 = plot_model(mys1, 'pred', terms = 's_word') +
   theme_bw() +
-  scale_x_continuous(name = 'word familiarity', breaks = c(0,.25,.5,.75,1), labels = c(0, 24, 50,75, 1)) + # duh
+  scale_x_continuous(name = "word's familiarity", breaks = c(0,.25,.5,.75,1), labels = c(0, 24, 50,75, 1)) + # duh
   ylim(.5,2) +
   theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
   ggtitle('')
@@ -378,28 +378,28 @@ ggsave('figures/plot1-3.pdf', width = 5, height = 3)
 
 p7 = plot_model(mos1, 'pred', terms = 's_age') +
   theme_bw() +
-  scale_x_continuous(name = 'participant\nage', breaks = c(0,.25,.5,.75,1), labels = c(18,21,25,45.5,90)) + # I checked!
+  scale_x_continuous(name = "participant's\nage", breaks = c(0,.25,.5,.75,1), labels = c(18,21,25,45.5,90)) + # I checked!
   ylim(.5,2) +
   ylab('response time (s)') +
   ggtitle('')
 
 p8 = plot_model(mos1, 'pred', terms = 's_size') +
   theme_bw() +
-  scale_x_continuous(name = 'participant\nvocabulary size', breaks = c(0,.25,.5,.75,1), labels = c(1,31,35,40,50)) + # I checked!
+  scale_x_continuous(name = "participant's\nvocabulary size", breaks = c(0,.25,.5,.75,1), labels = c(1,31,35,40,50)) + # I checked!
   ylim(.5,2) +
   theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
   ggtitle('')
 
 p9 = plot_model(mos1, 'pred', terms = 's_edu') +
   theme_bw() +
-  scale_x_continuous(name = 'participant\nyears in\neducation', breaks = c(0,.25,.5,.75,1), labels = c(7, 13.5,15,17,27)) + 
+  scale_x_continuous(name = "participant's\nyears in\neducation", breaks = c(0,.25,.5,.75,1), labels = c(7, 13.5,15,17,27)) + 
   ylim(.5,2) +
   theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
   ggtitle('')
 
 p10 = plot_model(mos1, 'pred', terms = 's_word') +
   theme_bw() +
-  scale_x_continuous(name = 'word familiarity', breaks = c(0,.25,.5,.75,1), labels = c(0, 24, 50,75, 1)) + # duh
+  scale_x_continuous(name = "word's familiarity", breaks = c(0,.25,.5,.75,1), labels = c(0, 24, 50,75, 1)) + # duh
   ylim(.5,2) +
   theme(axis.title.y = element_blank(), axis.text.y = element_blank(), axis.ticks.y = element_blank()) +
   ggtitle('')
@@ -412,7 +412,7 @@ plot_model(mor3, 'pred', terms = c('s_age','res_size_age')) +
   scale_colour_viridis_d(labels = c('Q1', 'Q2', 'Q3')) +
   theme_bw() +
   labs(colour = 'residual\nvocabulary\nsize') +
-  scale_x_continuous(name = 'participant\nage', breaks = c(0,.25,.5,.75,1), labels = c(18,21,25,45.5,90)) + # I checked!
+  scale_x_continuous(name = "participant's\nage", breaks = c(0,.25,.5,.75,1), labels = c(18,21,25,45.5,90)) + # I checked!
   ylab('response time (s)') +
   ggtitle('')
 ggsave('figures/plot1-5.pdf', width = 5, height = 3)
@@ -422,7 +422,7 @@ plot_model(mor4, 'pred', terms = c('s_edu','res_size_edu')) +
   scale_colour_viridis_d(labels = c('Q1', 'Q2', 'Q3')) +
   theme_bw() +
   labs(colour = 'residual\nvocabulary\nsize') +
-  scale_x_continuous(name = 'participant\nyears in\neducation', breaks = c(0,.25,.5,.75,1), labels = c(7, 13.5,15,17,27)) + 
+  scale_x_continuous(name = "participant's\nyears in\neducation", breaks = c(0,.25,.5,.75,1), labels = c(7, 13.5,15,17,27)) + 
   ylab('response time (s)') +
   ggtitle('')
 ggsave('figures/plot1-6.pdf', width = 5, height = 3)
@@ -432,7 +432,7 @@ plot_model(comb5, 'pred', terms = c('s_age [all]','s_size [.4, .6, .8]')) +
   scale_fill_colorblind() +
   theme_bw() +
   labs(colour = 'vocabulary\nsize') +
-  scale_x_continuous(name = 'participant age', breaks = c(0,.25,.5,.75,1), labels = c(9,20,23,40,90)) +
+  scale_x_continuous(name = "participant's age", breaks = c(0,.25,.5,.75,1), labels = c(9,20,23,40,90)) +
   ylab('response time (s)') +
   ggtitle('')
 ggsave('figures/plot1-7.pdf', width = 5, height = 3)
